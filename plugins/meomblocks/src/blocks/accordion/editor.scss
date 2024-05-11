@@ -1,0 +1,45 @@
+@import "./style";
+
+.accordion {
+    &__title {
+        pointer-events: all;
+        position: static;
+    }
+
+    &__header {
+        box-sizing: border-box;
+        padding-right: 0;
+    }
+
+    &__content-inner {
+        display: none;
+        margin-bottom: var(--space-m);
+    }
+
+    &__button-icon {
+        margin-right: 1rem;
+        transition: transform 0.3s;
+    }
+
+    .block-list-appender {
+        margin-top: 2rem !important;
+        position: relative;
+        display: none;
+    }
+
+    &.is-selected,
+    &.is-child-selected,
+    &.has-child-selected {
+        .accordion__content-inner {
+            display: block;
+        }
+
+        .accordion__button-icon {
+            transform: rotate(-180deg);
+        }
+
+        .block-list-appender {
+            display: block;
+        }
+    }
+}

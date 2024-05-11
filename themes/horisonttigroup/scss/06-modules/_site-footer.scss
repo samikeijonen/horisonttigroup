@@ -1,0 +1,14 @@
+footer.wp-block-group {
+    color: var(--color-grey-300);
+    font-size: var(--text-400);
+
+    a {
+        color: var(--color-grey-300);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--color-grey-white);
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "meomblocks/accordion",
+  "version": "0.1.0",
+  "title": "Haitari",
+  "category": "meomblocks",
+  "keywords": [
+    "accordion",
+    "haitari",
+    "meomblocks"
+  ],
+  "icon": "align-pull-right",
+  "description": "Haitari, missä pidempi sisältö on piilotettu ja avautuu klikkaamalla.",
+  "attributes": {},
+  "example": {},
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": [
+        "top"
+      ]
+    }
+  },
+  "textdomain": "meomblocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

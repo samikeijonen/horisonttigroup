@@ -1,0 +1,27 @@
+.term-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    list-style-type: none;
+    margin: var(--space-2xl) auto 0;
+    padding: 0;
+
+    &__item {
+        display: inline-flex;
+    }
+
+    a {
+        @include text-style(text-510);
+        border-radius: var(--radius-full, 62.5rem);
+        border: 1px solid var(--color-border-primary, #b3b3b3);
+        color: var(--color-text-secondary, #666);
+        padding: var(--space-button-vertical) var(--space-m);
+        text-decoration: none;
+
+        &[aria-current="page"] {
+            background-color: var(--color-text-success, #03cea4);
+            border-color: var(--color-text-success, #03cea4);
+            color: var(--color-text-primary);
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "horisonttigroup-stack",
+  "version": "1.0.0",
+  "description": "horisonttigroup-stack project",
+  "author": "MEOM Oy",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "WordPress",
+    "editor"
+  ],
+  "homepage": "https://github.com/samikeijonen/horisonttigroup",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wordpress/wordpress.git"
+  },
+  "bugs": "https://github.com/samikeijonen/horisonttigroup/issues?status=new&status=open",
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "dependencies": {
+    "@10up/component-accordion": "^2.0.1",
+		"@wordpress/a11y": "^3.5",
+    "@wordpress/url": "^3.5",
+    "photoswipe": "^5.4.3",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "workspaces": [
+    "themes/horisonttigroup",
+    "plugins/meomblocks"
+  ],
+  "scripts": {
+    "build:theme": "npm run build -w=horisonttigroup",
+    "build:plugin": "npm run build -w=meomblocks",
+    "build": "run-p build:theme build:plugin",
+    "format:js": "wp-scripts format 'themes/horisonttigroup/js/**/*.js'",
+    "format-blocks:js": "wp-scripts format 'plugins/meomblocks/**/*.js' -w=meomblocks",
+    "lint": "npm run lint:css && npm run lint-blocks:css && npm run lint:js && npm run lint-blocks:js",
+    "lint:css": "wp-scripts lint-style 'themes/horisonttigroup/scss/**/*.scss'",
+    "lint-blocks:css": "wp-scripts lint-style 'plugins/meomblocks/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'themes/horisonttigroup/js/**/*.js'",
+    "lint-blocks:js": "wp-scripts lint-js 'plugins/meomblocks/**/*.js'",
+    "lint:pkg-json": "wp-scripts lint-pkg-json -w=horisonttigroup",
+    "start:theme": "npm run start --hot -w=horisonttigroup",
+    "start:plugin": "npm run start --hot -w=meomblocks",
+    "start": "run-p start:theme start:plugin"
+  }
+}

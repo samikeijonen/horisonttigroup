@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "meomblocks/media-content-media",
+  "version": "0.1.0",
+  "title": "Media Content Media",
+  "parent": [
+    "meomblocks/media-content"
+  ],
+  "category": "meomblocks",
+  "keywords": [
+    "media",
+    "meomblocks"
+  ],
+  "description": "Media Content Item for Media.",
+  "attributes": {},
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "meomblocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

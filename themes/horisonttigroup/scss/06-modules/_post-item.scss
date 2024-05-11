@@ -1,0 +1,13 @@
+.posts-list {
+    --column-width: 24rem;
+    margin-top: var(--space-l);
+}
+
+.post-item {
+    @include media(medium) {
+        margin-top: var(--gutter);
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kala\n"
+"POT-Creation-Date: 2017-04-02 12:30+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;"
+"_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;"
+"esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:4
+msgid "404 - Not Found"
+msgstr ""
+
+#: 404.php:5
+msgid "Unfortunately, we didn’t find anything."
+msgstr ""
+
+#: footer.php:6
+msgid "With love,"
+msgstr "Rakkaudella"
+
+#: front-page.php:11
+msgid "Muokkaa sivua"
+msgstr ""
+
+#: header.php:6
+msgid "Skip to content"
+msgstr "Siirry sisältöön"
+
+#: includes/clean.php:9
+msgid "Main Menu"
+msgstr "Päävalikko"
+
+#: refactor_search.php:4
+msgid "Hakutulokset sanalle: "
+msgstr ""
+
+#: refactor_search.php:10
+msgid "Ei kommentteja"
+msgstr ""
+
+#: refactor_search.php:10
+msgid "1 kommentti"
+msgstr ""
+
+#: refactor_search.php:10
+msgid "% kommenttia"
+msgstr ""
+
+#: refactor_search.php:10
+msgid "Kommentointi suljettu"
+msgstr ""
+
+#: refactor_search.php:15 refactor_single.php:10
+msgid "Muokkaa artikkelia"
+msgstr ""
+
+#: refactor_search.php:20
+msgid "Ei tuloksia"
+msgstr ""
+
+#: refactor_search.php:22
+msgid "Haullasi ei löytynyt tuloksia, yritä uudelleen."
+msgstr ""
+
+#: refactor_single.php:13
+msgctxt "Edellisen artikkelin linkki"
+msgid "&laquo;"
+msgstr ""
+
+#: refactor_single.php:14
+msgctxt "Seuraavan artikkelin linkki"
+msgid "&raquo;"
+msgstr ""
+
+#~ msgid "Rooms"
+#~ msgstr "Huoneet"
+
+#~ msgid "Room"
+#~ msgstr "Huone"

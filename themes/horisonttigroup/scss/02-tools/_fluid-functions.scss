@@ -1,0 +1,25 @@
+@use "sass:math";
+
+@function strip-fluid-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return math.div($number, $number * 0 + 1);
+    }
+    @return $number;
+}
+
+@function fluid-size($min-value, $max-value, $negative: false, $min-vw: $fluid-min-vw, $max-vw: $fluid-max-vw ) {
+    @if $negative == true {
+        $min-value: $min-value * -1;
+        $max-value: $max-value * -1;
+    }
+    $calc-value: fluid-calc-value($min-value, $max-value, $min-vw, $max-vw);
+    @return unquote(
+        "clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) })"
+    );
+}
+
+@function fluid-calc-value($min-value, $max-value, $min-vw: $fluid-min-vw, $max-vw: $fluid-max-vw) {
+    $factor-helper: strip-fluid-unit($max-vw - $min-vw);
+    $factor: math.div(1, $factor-helper) * strip-fluid-unit($max-value - $min-value);
+    @return unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+}

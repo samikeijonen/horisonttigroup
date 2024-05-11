@@ -1,0 +1,64 @@
+{
+    "house": {
+        "tax_query": [
+            {
+                "taxonomy": "house-price-category",
+                "name": "tax-house-price-category",
+                "urlKey": "hinta"
+            },
+            {
+                "taxonomy": "house-cash-flow",
+                "name": "tax-house-cash-flow",
+                "urlKey": "kassavirta"
+            },
+            {
+                "taxonomy": "house-rental-income",
+                "name": "tax-house-rental-income",
+                "urlKey": "vuokratuotto"
+            },
+            {
+                "taxonomy": "house-type",
+                "name": "tax-house-type",
+                "urlKey": "huoneita"
+            },
+            {
+                "taxonomy": "house-city",
+                "name": "tax-house-city",
+                "urlKey": "sijainti"
+            },
+            {
+                "taxonomy": "house-status",
+                "name": "tax-house-status",
+                "urlKey": "status"
+            }
+        ],
+        "meta_query": [],
+        "order": {
+            "name": "order",
+            "urlKey": "orderBy",
+            "options": [
+                {
+                    "value": "title-asc",
+                    "label": "By title asc",
+                    "default": true
+                },
+                {
+                    "value": "title-desc",
+                    "label": "By title desc"
+                },
+                {
+                    "value": "newest-first",
+                    "label": "Newest first"
+                },
+                {
+                    "value": "oldest-first",
+                    "label": "Oldest first"
+                }
+            ]
+        }
+    },
+    "search": {
+        "name": "s",
+        "urlKey": "searchBy"
+    }
+}

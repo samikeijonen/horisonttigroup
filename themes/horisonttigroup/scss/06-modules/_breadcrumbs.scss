@@ -1,0 +1,59 @@
+.yoast-breadcrumbs {
+    display: flex;
+    > span {
+        @include text-style(text-320);
+        background-color: var(--color-grey-050);
+        border-radius: var(--radius-brand);
+        color: var(--color-brand-blue-600);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3xs);
+        padding: var(--space-3xs) var(--space-xs);
+
+        .hero & {
+            background-color: var(--color-grey-30-black);
+            color: var(--color-grey-white);
+        }
+    }
+
+    a {
+        text-decoration: none;
+
+        .hero & {
+            color: var(--color-grey-white);
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    // Visually hidden on single views.
+    .breadcrumb_last:not(:first-child) {
+        color: var(--color-grey-600);
+
+        .hero & {
+            background-color: var(--color-grey-30-black);
+            color: var(--color-brand-orange);
+        }
+    }
+
+    &--hide-last-item .breadcrumb_last {
+        border: 0;
+        clip: rect(1px, 1px, 1px, 1px);
+        clip-path: inset(50%);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        /**
+         * Many screen reader and browser combinations announce broken words
+         * as they would appear visually.
+         */
+        word-wrap: normal !important;
+    }
+}

@@ -1,0 +1,121 @@
+/**
+ * Basic styles for Gravity Forms.
+ * If you use this file, disable CSS in Gravity Forms
+ */
+
+// Single field (contains label and field)
+.gfield {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    // Hide single choice checkbox legend
+    &.hidden_label legend {
+        display: none;
+    }
+}
+
+.gform_heading {
+    display: none;
+}
+
+// Single field after some content
+* + .gfield {
+    margin-top: var(--space-m);
+}
+
+// Input field container, complex input field set
+.ginput_container,
+.ginput_complex .gform-field-label + input {
+    margin-top: var(--space-3xs);
+}
+
+// Complex input field set input container after hidden legend
+.gfield.hidden_label legend + .ginput_container {
+    margin-top: 0;
+}
+
+// Field label, complex field set field label
+.gfield_label,
+.gform-field-label--type-sub {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3xs);
+    padding: 0;
+    @include text-style(text-510);
+}
+
+.gfield_required {
+    @include text-style(text-300);
+}
+
+// Single radio/checkbox row, consent checkbox row
+.gchoice,
+.ginput_container_consent {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    margin-top: var(--space-2xs);
+    @include text-style(text-500);
+}
+
+// 2 fields inside fieldset. Fields have their own labels.
+.ginput_complex {
+    display: flex;
+    gap: var(--space-m) 1rem;
+    flex-wrap: wrap;
+
+    > * {
+        flex: 0 0 calc(50% - 0.5rem);
+
+        @include media(medium) {
+            flex: 0 0 100%;
+        }
+    }
+}
+
+// Honeypot
+.gform_validation_container {
+    display: none;
+}
+
+// Validation errors container
+.gform_validation_errors {
+    margin: 0 0 var(--space-m);
+    padding: var(--space-2xs) var(--space-xs);
+    border-radius: 0.5rem;
+    border: 0.0625rem solid var(--color-form-error);
+
+    // Validation errors title
+    .gform_submission_error {
+        margin: 0;
+        outline: none;
+        @include text-style(text-500);
+        font-weight: unset;
+        color: var(--color-form-error);
+    }
+}
+
+// Highlight fields with error
+.gfield_error {
+    input,
+    textarea,
+    .ginput_container_select {
+        border-color: var(--color-error);
+    }
+
+    // Error message after field with error
+    .validation_message {
+        @include text-style(text-300);
+        margin-top: var(--space-2xs);
+        color: var(--color-error);
+    }
+}
+
+// Form footer
+.gform_footer {
+    margin: var(--space-m) 0 0;
+}

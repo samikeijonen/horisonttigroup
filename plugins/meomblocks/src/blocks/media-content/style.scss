@@ -1,0 +1,37 @@
+@import "./../../../style-imports/theme-imports";
+
+.media-content {
+    container-name: media-content;
+    container-type: inline-size;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "media"
+            "content";
+        gap: var(--space-m-3xl);
+
+        > * {
+            position: relative;
+        }
+
+        .media-content-item--media {
+            grid-area: media;
+        }
+
+        @container media-content (min-width: 50em) {
+            align-items: center;
+            grid-template-columns: repeat(2, 1fr);
+
+            &.has-media-position-left {
+                grid-template-areas: "media content";
+            }
+
+            &.has-media-position-right {
+                grid-template-areas: "content media";
+            }
+        }
+    }
+}

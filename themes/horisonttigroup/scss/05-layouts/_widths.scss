@@ -1,0 +1,45 @@
+// Widths.
+.width-regular {
+    max-width: var(--width-regular);
+}
+
+.width-medium {
+    max-width: var(--width-medium);
+}
+
+.width-wide,
+.alignwide {
+    --width-heading-elements: var(--width-regular);
+    --width-text-elements: var(--width-regular);
+    max-width: var(--width-wide);
+
+    > .wp-block-heading {
+        max-width: var(--width-heading-elements, var(--width-regular));
+    }
+
+    > p {
+        max-width: var(--width-text-elements, var(--width-regular));
+    }
+}
+
+body .is-layout-constrained > .wp-block-heading.has-text-align-center, {
+    max-width: var(--width-medium);
+}
+
+.width-full,
+.alignfull {
+    margin-left: calc(var(--side-padding) * -1);
+    margin-right: calc(var(--side-padding) * -1);
+    max-width: none;
+    width: auto;
+
+    > * {
+        margin-inline: auto;
+    }
+}
+
+// Footer is not inside the content-area.
+footer.alignfull {
+    margin-left: auto;
+    margin-right: auto;
+}

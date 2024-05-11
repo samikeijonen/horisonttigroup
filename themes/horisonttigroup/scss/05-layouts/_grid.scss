@@ -1,0 +1,34 @@
+.grid-auto {
+    --column-width: 22rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--column-width)), 1fr));
+    gap: var(--space-m);
+
+    &.has-1-columns {
+        grid-template-columns: 1fr;
+    }
+
+    &.has-4-columns {
+        --column-width: 18rem;
+    }
+
+    &.has-gap-more-vertical {
+        gap: var(--space-xl) var(--space-m);
+    }
+
+    &.has-gap-more-horizontal {
+        gap: var(--space-l) var(--space-m-3xl);
+    }
+
+    @include media-min(large) {
+        grid-template-columns: repeat(3, 1fr);
+
+        &.has-2-columns {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &.has-4-columns {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

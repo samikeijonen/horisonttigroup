@@ -1,0 +1,28 @@
+.entry {
+    &__meta {
+        align-items: center;
+        color: var(--color-grey-600);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-m);
+    }
+
+    &__meta-meta {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2xs);
+    }
+
+    &__image {
+        margin-top: var(--space-xl);
+
+        + * {
+            margin-top: var(--space-xl);
+        }
+
+        img {
+            border-radius: var(--radius-brand);
+        }
+    }
+}

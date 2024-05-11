@@ -1,0 +1,84 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+@import "./../../../style-imports/theme-imports";
+
+.hero {
+    // @link: https://set.studio/relative-rounded-corners/
+    --hero-radius-padding: var(--side-padding);
+    --hero-radius-inner-size: var(--space-l);
+    --hero-radius: calc(var(--hero-radius-inner-size) + var(--hero-radius-padding));
+
+    container-name: hero;
+    container-type: inline-size;
+
+    background-color: var(--color-grey-black);
+    border-bottom-right-radius: var(--hero-radius);
+    color: var(--color-body);
+    position: relative;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-l-xl);
+        min-height: min(35rem, 50vh);
+        padding-bottom: var(--side-padding);
+        padding-top: var(--space-l);
+
+        @container hero (min-width: 45em) {
+            align-items: center;
+            gap: var(--space-m);
+            grid-template-columns: 1fr 1fr;
+            padding-top: var(--side-padding);
+        }
+    }
+
+    &__content,
+    &__image {
+        position: relative;
+    }
+
+    &.has-image-first-mobile {
+        @container hero (max-width: 45em) {
+            .hero__image {
+                order: 1;
+            }
+
+            .hero__content {
+                order: 2;
+            }
+
+            .hero__container {
+                padding-bottom: var(--space-l);
+            }
+        }
+    }
+
+    &__image img {
+        border-bottom-right-radius: var(--hero-radius-inner-size);
+
+        @container hero (min-width: 45em) {
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            object-fit: cover;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 0;
+        }
+    }
+}
+
+.content-area > .hero:first-child {
+    margin-top: 0;
+}
+
+.content-area > .hero:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,152 @@
+/*--------------------------------------------------------------
+# Settings - Global variables, config switches.
+--------------------------------------------------------------*/
+@import "01-settings/settings";
+@import "01-settings/settings-css";
+@import "01-settings/fonts";
+
+/*--------------------------------------------------------------
+# Tools - Default mixins and functions.
+--------------------------------------------------------------*/
+@import "02-tools/mixin";
+
+/*--------------------------------------------------------------
+# Generic - Ground-zero styles (resets, box-sizing, etc.).
+--------------------------------------------------------------*/
+@import "03-generic/reset";
+
+// Extra spesificity for editor.
+body {
+    @include text-style(text-500);
+    color: var(--color-text-primary);
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+    // Because in editor it's good to have some spacing at the bottom.
+    padding-bottom: var(--side-padding);
+}
+
+// Title wrapper.
+.edit-post-visual-editor__post-title-wrapper {
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: var(--width-medium) !important;
+
+    .wp-block-post-title {
+        max-width: none;
+    }
+}
+
+/*--------------------------------------------------------------
+ # Elements - Unclassed HTML elements (type selectors).
+--------------------------------------------------------------*/
+// Let typography be the first so other can inherit from that.
+@import "04-elements/typography";
+@import "04-elements/button";
+@import "04-elements/lists";
+@import "04-elements/media";
+@import "04-elements/table";
+
+// Forms base styles.
+.wp-block[data-type="gravityforms/form"],
+.wp-block[data-type="leadin/hubspot-form-block"] {
+    @import "04-elements/form";
+}
+
+/*--------------------------------------------------------------
+ # Layout - Undecorated design patterns.
+ --------------------------------------------------------------*/
+@import "05-layouts/content-area";
+@import "05-layouts/grid";
+@import "05-layouts/icon";
+@import "05-layouts/spacing";
+@import "05-layouts/widths";
+
+/*--------------------------------------------------------------
+ # Modules - specific UI components.
+ --------------------------------------------------------------*/
+@import "06-modules/breadcrumbs";
+@import "06-modules/card-item";
+@import "06-modules/core-blocks";
+@import "06-modules/gravity-forms";
+@import "06-modules/person-item";
+@import "06-modules/post-item";
+@import "06-modules/site-footer";
+
+/*--------------------------------------------------------------
+ # Utilities - Helpers and overrides.
+--------------------------------------------------------------*/
+@import "07-utilities/alignments";
+@import "07-utilities/colors";
+@import "07-utilities/media";
+
+// Reset margin for first hero.
+body .is-root-container > .wp-block.hero:first-child {
+    margin-top: 0;
+}
+
+// Full width. Because of Core styles, we have to use !important rule.
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .width-full,
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .alignfull {
+    margin-left: calc(var(--side-padding) * -1) !important;
+    margin-right: calc(var(--side-padding) * -1) !important;
+    max-width: none;
+    width: auto;
+}
+
+// Special styles for alignwide headings.
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .wp-block-heading.alignwide {
+    margin-left: 0 !important;
+}
+
+// Core adds align in the wrong wrapper.
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > [data-align="left"],
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .alignleft,
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > [data-align="right"],
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .alignright {
+    float: none !important;
+}
+
+.wp-block[data-align="left"] > .wp-block-image {
+    float: left;
+}
+
+.wp-block[data-align="right"] > .wp-block-image {
+    float: right;
+}
+
+// Add border and title to reusable blocks to make them stand out from regular blocks.
+.is-reusable {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px dashed #c0c0c0;
+    border-bottom: 1px dashed #c0c0c0;
+
+    &::before {
+        background-color: #c0c0c0;
+        position: absolute;
+        padding: 0 0.25rem;
+        content: attr(data-title);
+    }
+}
+
+// MEOM media button.
+.meom-media-button {
+    background-color: var(--color-grey-black);
+    color: var(--color-grey-white);
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+
+    &:hover {
+        background-color: var(--color-grey-black);
+        color: var(--color-grey-white);
+    }
+}
+
+.components-placeholder {
+    position: relative;
+    z-index: 1000;
+}

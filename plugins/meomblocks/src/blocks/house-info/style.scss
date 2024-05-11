@@ -1,0 +1,13 @@
+@import "./../../../style-imports/theme-imports";
+
+.house-info {
+    &__item-label {
+        @include text-style(text-520);
+        color: var(--color-sub-heading);
+        display: block;
+    }
+
+    &__item-value {
+        @include text-style(heading-500);
+    }
+}

@@ -1,0 +1,16 @@
+@import "~@evermade/wp-block-toolkit/build/index.css";
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+
+    &__editor {
+        display: flex;
+        min-height: 100%;
+    }
+}
+
+.card-item__image {
+    margin: 0;
+}

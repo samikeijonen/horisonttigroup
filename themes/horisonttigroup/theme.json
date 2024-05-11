@@ -1,0 +1,317 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+	"templateParts": [
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		},
+		{
+			"name": "articles",
+			"title": "Artikkelit arkisto",
+			"area": "uncategorized"
+		},
+		{
+			"name": "houses",
+			"title": "Kohteiden arkisto",
+			"area": "uncategorized"
+		}
+	],
+	"styles": {
+        "spacing": {
+            "blockGap": "var(--space-m)"
+        }
+    },
+    "settings": {
+        "border": {
+            "color": false,
+            "radius": false,
+            "style": false,
+            "width": false
+        },
+        "color": {
+            "custom": false,
+            "customGradient": false,
+            "defaultPalette": false,
+            "defaultGradients": false,
+            "duotone": [],
+            "gradients": [],
+            "link": false,
+            "background": true,
+            "palette": []
+        },
+        "layout": {
+            "contentSize": "var(--width-regular)",
+            "wideSize": "var(--width-wide)",
+			"allowCustomContentAndWideSize": false
+        },
+        "spacing": {
+            "blockGap": false,
+			"customSpacingSize": false,
+            "margin": true,
+            "padding": false,
+            "units": ["rem"],
+			"spacingSizes": [
+				{
+					"size": "var(--space-2xs)",
+					"slug": "space-2xs",
+					"name": "2XS"
+				},
+				{
+					"size": "var(--space-xs)",
+					"slug": "space-xs",
+					"name": "XS"
+				},
+				{
+					"size": "var(--space-s)",
+					"slug": "space-s",
+					"name": "S"
+				},
+				{
+					"size": "var(--space-m)",
+					"slug": "space-m",
+					"name": "M"
+				},
+				{
+					"size": "var(--space-l)",
+					"slug": "space-l",
+					"name": "L"
+				},
+				{
+					"size": "var(--space-xl)",
+					"slug": "space-xl",
+					"name": "XL"
+				},
+				{
+					"size": "var(--space-2xl)",
+					"slug": "space-2xl",
+					"name": "2XL"
+				}
+			]
+        },
+        "typography": {
+            "customFontSize": false,
+            "fontStyle": false,
+            "fontWeight": false,
+            "letterSpacing": false,
+            "lineHeight": false,
+            "textDecoration": false,
+            "textTransform": false,
+            "dropCap": false,
+            "fontFamilies": [],
+            "fontSizes": [
+                {
+                    "slug": "hg-400",
+                    "size": "var(--text-400)",
+                    "name": "Näyttää pienemmältä tekstiltä"
+                },
+                {
+                    "slug": "hg-body",
+                    "size": "var(--text-500)",
+                    "name": "Näyttää body-tekstiltä"
+                },
+                {
+                    "slug": "hg-600",
+                    "size": "var(--text-600)",
+                    "name": "Näyttää isommalta tekstiltä"
+                },
+                {
+                    "slug": "hg-subheading",
+                    "size": "var(--text-520)",
+                    "name": "Näyttää yläotsikolta"
+                },
+				{
+                    "slug": "hg-background-number",
+                    "size": "var(--heading-500)",
+                    "name": "Taustaväri numeron kanssa"
+                },
+                {
+                    "slug": "hg-h1",
+                    "size": "var(--heading-600)",
+                    "name": "Näyttää H1-otsikolta"
+                },
+                {
+                    "slug": "hg-h2",
+                    "size": "var(--heading-500)",
+                    "name": "Näyttää H2-otsikolta"
+                },
+                {
+                    "slug": "hg-h3",
+                    "size": "var(--heading-400)",
+                    "name": "Näyttää H3-otsikolta"
+                },
+                {
+                    "slug": "hg-h4",
+                    "size": "var(--heading-300)",
+                    "name": "Näyttää H4-otsikolta"
+                },
+                {
+                    "slug": "hg-h5",
+                    "size": "var(--heading-200)",
+                    "name": "Näyttää H5-otsikolta"
+                }
+            ]
+        },
+        "blocks": {
+            "meomblocks/media-content-item": {
+                "color": {
+                    "text": false,
+                    "background": true,
+					"palette": [
+						{
+							"slug": "hg-grey-050",
+							"color": "var(--color-grey-050)",
+							"name": "Harmaa"
+						},
+						{
+							"slug": "hg-grey-black",
+							"color": "var(--color-grey-black)",
+							"name": "Tumma"
+						}
+					]
+                }
+            },
+            "core/button": {
+                "border": {
+                    "radius": false
+                }
+			},
+			"core/paragraph": {
+                "color": {
+                    "text": true,
+                    "background": false,
+					"palette": [
+						{
+							"slug": "hg-white",
+							"color": "var(--color-grey-white)",
+							"name": "Valkoinen"
+						},
+						{
+							"slug": "hg-grey-black",
+							"color": "var(--color-grey-black)",
+							"name": "Tumma"
+						},
+						{
+							"slug": "hg-grey-800",
+							"color": "var(--color-grey-800)",
+							"name": "Harmaa 800"
+						},
+						{
+							"slug": "hg-grey-700",
+							"color": "var(--color-grey-700)",
+							"name": "Harmaa 700"
+						},
+						{
+							"slug": "hg-grey-600",
+							"color": "var(--color-grey-600)",
+							"name": "Harmaa 600"
+						},
+						{
+							"slug": "hg-grey-500",
+							"color": "var(--color-grey-500)",
+							"name": "Harmaa 500"
+						},
+						{
+							"slug": "hg-grey-400",
+							"color": "var(--color-grey-400)",
+							"name": "Harmaa 400"
+						},
+						{
+							"slug": "hg-grey-300",
+							"color": "var(--color-grey-300)",
+							"name": "Harmaa 300"
+						},
+						{
+							"slug": "hg-grey-200",
+							"color": "var(--color-grey-200)",
+							"name": "Harmaa 200"
+						},
+						{
+							"slug": "hg-grey-100",
+							"color": "var(--color-grey-100)",
+							"name": "Harmaa 100"
+						}
+					]
+                }
+            },
+			"core/heading": {
+                "color": {
+                    "text": true,
+                    "background": false,
+					"palette": [
+						{
+							"slug": "hg-white",
+							"color": "var(--color-grey-white)",
+							"name": "Valkoinen"
+						},
+						{
+							"slug": "hg-grey-black",
+							"color": "var(--color-grey-black)",
+							"name": "Tumma"
+						},
+						{
+							"slug": "hg-grey-800",
+							"color": "var(--color-grey-800)",
+							"name": "Harmaa 800"
+						},
+						{
+							"slug": "hg-grey-700",
+							"color": "var(--color-grey-700)",
+							"name": "Harmaa 700"
+						},
+						{
+							"slug": "hg-grey-600",
+							"color": "var(--color-grey-600)",
+							"name": "Harmaa 600"
+						}
+					]
+                }
+            },
+			"core/social-icon": {
+                "color": {
+                    "text": true,
+                    "background": true,
+					"palette": [
+						{
+							"slug": "hg-grey-black",
+							"color": "var(--color-grey-black)",
+							"name": "Tumma"
+						},
+						{
+							"slug": "hg-grey-white",
+							"color": "var(--color-grey-white)",
+							"name": "Valkoinen"
+						}
+					]
+                }
+            },
+			"core/group": {
+                "color": {
+                    "text": false,
+                    "background": true,
+					"palette": [
+						{
+							"slug": "hg-grey-050",
+							"color": "var(--color-grey-050)",
+							"name": "Harmaa"
+						},
+						{
+							"slug": "hg-grey-black",
+							"color": "var(--color-grey-black)",
+							"name": "Tumma"
+						},
+						{
+							"slug": "hg-grey-white",
+							"color": "var(--color-grey-white)",
+							"name": "Valkoinen"
+						}
+					]
+                },
+				"spacing": {
+					"padding": true
+				}
+            }
+        }
+    }
+}

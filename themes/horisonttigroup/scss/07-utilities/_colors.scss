@@ -1,0 +1,59 @@
+body {
+    --color-heading: var(--color-grey-black);
+    --color-body: var(--color-grey-800);
+    --color-sub-heading: var(--color-grey-600);
+    --color-text-lead: var(--color-grey-black);
+
+    --color-bg-card: var(--color-grey-white);
+    --color-bg-card-footer: var(--color-grey-050);
+    --color-checkmark: var(--color-success-700);
+    --color-bg-checkmark: var(--color-success-100);
+
+    --color-bg-table-tr: var(--color-grey-050);
+    --color-bg-number: var(--color-grey-050);
+    --color-bg-icon: var(--color-grey-050);
+
+    --color-link-tax: var(--color-grey-600);
+    --color-border-tax-link: var(--color-grey-500);
+
+    --color-border-light: var(--color-grey-10-black);
+
+    --color-accent: var(--color-grey-black);
+    --color-link: var(--color-grey-black);
+    --color-link-hover: var(--color-grey-700);
+}
+
+.has-hg-grey-black-background-color:not(.has-text-color) {
+    --color-heading: var(--color-grey-white);
+    --color-body: var(--color-grey-050);
+    --color-sub-heading: var(--color-grey-100);
+    --color-text-lead: var(--color-grey-white);
+
+    --color-bg-card: var(--color-grey-900);
+    --color-bg-card-footer: var(--color-grey-600);
+    --color-checkmark: var(--color-grey-white);
+    --color-bg-checkmark: var(--color-grey-700);
+
+    --color-bg-table-tr: var(--color-grey-800);
+    --color-bg-number: var(--color-grey-800);
+    --color-bg-icon: var(--color-grey-800);
+
+    --color-link-tax: var(--color-grey-200);
+    --color-border-tax-link: var(--color-grey-500);
+
+    --color-border-light: var(--color-grey-600);
+
+    --color-accent: var(--color-grey-white);
+    --color-link: var(--color-grey-white);
+    --color-link-hover: var(--color-grey-200);
+
+    background-color: var(--color-grey-black);
+    color: var(--color-body);
+
+    --color-form-text: var(--color-grey-white);
+    --color-form-border: var(--color-grey-500);
+    --color-form-background: var(--color-grey-900);
+    --color-radio-fill: var(--color-grey-white);
+    --color-form-focus: var(--color-grey-050);
+    --color-form-error: var(--color-error);
+}

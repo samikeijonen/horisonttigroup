@@ -1,0 +1,109 @@
+{
+	"name": "meom/kala-stack",
+	"type": "project",
+	"license": "MIT",
+	"description": "MEOM WordPress Project Template - Based on Seravo WordPress",
+	"homepage": "https://seravo.com/",
+	"authors": [
+		{
+			"name": "MEOM",
+			"email": "tech@meom.fi",
+			"homepage": "https://www.meom.fi/"
+		}
+	],
+	"keywords": [
+		"wordpress",
+		"composer",
+		"wp",
+		"wp-palvelu",
+		"seravo"
+	],
+	"config": {
+		"preferred-install": "dist",
+		"allow-plugins": {
+			"johnpbloch/wordpress-core-installer": true,
+			"koodimonni/composer-dropin-installer": true,
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"fancyguy/webroot-installer": true
+		}
+	},
+	"autoload": {
+		"psr-0": {
+			"WordPress\\Installer": "scripts"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"WordPress\\Installer::symlinkWPContent"
+		],
+		"post-update-cmd": [
+			"WordPress\\Installer::symlinkWPContent"
+		]
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "composer",
+			"url": "https://wp-languages.github.io"
+		},
+		{
+			"type": "composer",
+            "url": "https://connect.advancedcustomfields.com"
+		}
+	],
+	"require": {
+		"php": ">=8.0",
+		"composer/installers": "^1.0",
+		"koodimonni/composer-dropin-installer": "^1.0",
+		"roots/bedrock-autoloader": "^1.0",
+		"vlucas/phpdotenv": "^5.0",
+		"koodimonni-language/fi": "*",
+		"koodimonni-language/sv_se": "*",
+		"wpackagist-plugin/wordpress-seo": "*",
+		"wpackagist-plugin/so-clean-up-wp-seo": "*",
+		"wpackagist-plugin/regenerate-thumbnails": "*",
+		"wpackagist-plugin/ewww-image-optimizer": "*",
+		"wpackagist-plugin/svg-support": "*",
+		"wpackagist-plugin/relevanssi": "*",
+		"wpackagist-plugin/duplicate-post": "*",
+		"aucor/wp_query-route-to-rest-api": "*",
+		"wpengine/advanced-custom-fields-pro": "*"
+	},
+	"require-dev": {
+		"wpackagist-plugin/query-monitor": "*",
+		"meom/phpcs-composer": "dev-main",
+		"wp-coding-standards/wpcs": "@dev"
+	},
+	"extra": {
+		"installer-paths": {
+			"plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"mu-plugins/{$name}/": [
+				"type:wordpress-muplugin"
+			],
+			"themes/{$name}": [
+				"type:wordpress-theme"
+			]
+		},
+		"dropin-paths": {
+			"languages/": [
+				"vendor:koodimonni-language"
+			],
+			"languages/plugins/": [
+				"vendor:koodimonni-plugin-language"
+			],
+			"languages/themes/": [
+				"vendor:koodimonni-theme-language"
+			],
+			".": [
+				"type:seravo-wordpress-dropin"
+			]
+		},
+		"wordpress-install-dir": "htdocs/wordpress"
+	}
+}

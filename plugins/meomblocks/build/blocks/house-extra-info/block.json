@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "meomblocks/house-extra-info",
+  "version": "0.1.0",
+  "title": "Kohteen lisätiedot",
+  "category": "meomblocks",
+  "keywords": [
+    "artikkeli",
+    "auto",
+    "meomblocks"
+  ],
+  "description": "Näyttää kohteesta lisätiedot kuten vuokra ja hoitovastike.",
+  "attributes": {},
+  "example": {},
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": [
+        "top"
+      ]
+    }
+  },
+  "textdomain": "meomblocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

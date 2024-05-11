@@ -1,0 +1,85 @@
+/**
+ * Main stylesheet for the theme.
+ *
+ * Theme styles follow http://cssguidelin.es/ and are organized according to
+ * Inverted Triangle CSS (ITCSS) principles put forth by Harry Roberts. In
+ * short, each layer of CSS gets more specific as you move down this page.
+ */
+
+/*--------------------------------------------------------------
+# Settings - Global variables, config switches.
+--------------------------------------------------------------*/
+@import "01-settings/settings";
+@import "01-settings/settings-css";
+@import "01-settings/fonts";
+
+/*--------------------------------------------------------------
+# Tools - Default mixins and functions.
+--------------------------------------------------------------*/
+@import "02-tools/mixin";
+
+/*--------------------------------------------------------------
+# Generic - Ground-zero styles (resets, box-sizing, etc.).
+--------------------------------------------------------------*/
+@import "03-generic/reset";
+@import "03-generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Elements - Unclassed HTML elements (type selectors).
+--------------------------------------------------------------*/
+// Let typography and focus be the first so other can inherit and overwrite from that.
+@import "04-elements/body-main";
+@import "04-elements/typography";
+@import "04-elements/focus";
+@import "04-elements/button";
+@import "04-elements/form";
+@import "04-elements/lists";
+@import "04-elements/media";
+@import "04-elements/table";
+
+/*--------------------------------------------------------------
+# Layout - Undecorated design patterns.
+--------------------------------------------------------------*/
+@import "05-layouts/animations";
+@import "05-layouts/content-area";
+@import "05-layouts/grid";
+@import "05-layouts/guide-archive";
+@import "05-layouts/icon";
+@import "05-layouts/spacing";
+@import "05-layouts/widths";
+
+/*--------------------------------------------------------------
+# Modules - specific UI components.
+--------------------------------------------------------------*/
+@import "06-modules/core-blocks";
+
+/*
+ * Molecules and organisms - Appearance of lift module and slider for example.
+ * http://bradfrost.com/blog/post/atomic-web-design/#molecules
+ * http://bradfrost.com/blog/post/atomic-web-design/#organisms
+ */
+@import "06-modules/breadcrumbs";
+@import "06-modules/card-item";
+@import "06-modules/entry";
+@import "06-modules/gravity-forms";
+@import "06-modules/lightbox";
+@import "06-modules/pagination";
+@import "06-modules/person-item";
+@import "06-modules/post-item";
+@import "06-modules/site-footer";
+@import "06-modules/site-header";
+@import "06-modules/site-nav";
+@import "06-modules/term-list";
+
+/*--------------------------------------------------------------
+# Utilities - Helpers and overrides.
+--------------------------------------------------------------*/
+@import "07-utilities/accessibility";
+@import "07-utilities/alignments";
+@import "07-utilities/colors";
+@import "07-utilities/layout";
+@import "07-utilities/media";
+
+/*--------------------------------------------------------------
+# Other
+--------------------------------------------------------------*/

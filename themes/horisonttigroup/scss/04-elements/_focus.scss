@@ -1,0 +1,10 @@
+// Base focus in it's own file because we probably don't want it in the editor.
+:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+}
+
+// If :focus-visible is supported, remove "mouse interaction" focus styles.
+:focus:not(:focus-visible) {
+    outline: none;
+}

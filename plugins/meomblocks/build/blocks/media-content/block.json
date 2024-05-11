@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "meomblocks/media-content",
+  "version": "0.1.0",
+  "title": "Media ja sisältö",
+  "category": "meomblocks",
+  "keywords": [
+    "image",
+    "media",
+    "content",
+    "meomblocks"
+  ],
+  "description": "Media voi olla kuva tai video ja sisältö voi olla tekstiä tai muuta sisältöä.",
+  "attributes": {
+    "mediaPosition": {
+      "type": "string",
+      "default": "left"
+    }
+  },
+  "example": {},
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": [
+        "top"
+      ]
+    }
+  },
+  "textdomain": "meomblocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

@@ -1,0 +1,3 @@
+// We need this in the editor because CSS variabels are only in scope .editor-styles-wrapper.
+// This will bring them everywhere in the editor.
+@import "01-settings/settings-css";

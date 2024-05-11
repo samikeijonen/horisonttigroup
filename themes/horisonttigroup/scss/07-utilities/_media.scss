@@ -1,0 +1,52 @@
+.aspect-ratio {
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.aspect-ratio--1-1 {
+    aspect-ratio: 1 / 1;
+}
+
+.aspect-ratio--3-2 {
+    aspect-ratio: 3 / 2;
+}
+
+.aspect-ratio--4-3 {
+    aspect-ratio: 4 / 3;
+}
+
+.aspect-ratio--3-4 {
+    aspect-ratio: 3 / 4;
+}
+
+.is-cover-img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+// Absolute link is used for example in the post items.
+// The idea is that it covers the whole parent element so the full item is clickable.
+.is-absolute-link {
+    &::after {
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+    }
+}

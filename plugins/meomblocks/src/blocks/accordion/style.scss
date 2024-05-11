@@ -1,0 +1,66 @@
+@import "./../../../style-imports/theme-imports";
+
+.accordion {
+    &__header {
+        @include text-style(heading-300);
+        align-items: center;
+        background-color: var(--color-bg-card);
+        color: var(--color-heading);
+        border: 0;
+        border-radius: var(--radius-brand);
+        box-shadow: var(--box-shadow-l);
+        cursor: pointer;
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: var(--space-s);
+        padding: 0.875em 1em;
+        position: relative;
+        text-align: left;
+        width: 100%;
+
+        &[aria-expanded="true"] {
+            .accordion__button-icon {
+                transform: rotate(-180deg);
+            }
+        }
+
+        &[aria-expanded] + .accordion__content {
+            // Fallback. Correct max-height is calculated via JS.
+            --accordion-max-height: 500px;
+
+            opacity: 0;
+            overflow: hidden;
+            position: relative;
+            max-height: 0;
+            transition: all 0.3s;
+            visibility: hidden;
+        }
+
+        &[aria-expanded="true"] + .accordion__content {
+            max-height: var(--accordion-max-height);
+            opacity: 1;
+            overflow: visible;
+            margin-bottom: var(--space-m);
+            visibility: visible;
+        }
+    }
+
+    &__button-icon {
+        flex-shrink: 0;
+        margin-left: auto;
+        pointer-events: none;
+        transition: transform var(--transition-3);
+    }
+
+    &__title {
+        align-items: center;
+        display: flex;
+        gap: 0.5rem;
+        pointer-events: none;
+        position: relative;
+
+        img {
+            max-width: 1.5rem;
+        }
+    }
+}

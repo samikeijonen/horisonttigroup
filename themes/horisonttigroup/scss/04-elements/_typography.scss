@@ -1,0 +1,105 @@
+html {
+    // To make sure user browser setting for font size is respected.
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--space-l) + var(--wp-admin--admin-bar--height, 0px) + var(--site-header-height, 0px));
+}
+
+body,
+button,
+input,
+select,
+textarea,
+.has-hg-body-font-size {
+    @include text-style(text-500);
+    color: var(--color-body);
+}
+
+strong {
+    color: var(--color-heading);
+}
+
+a {
+    color: var(--color-link);
+    transition: all var(--transition-3);
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: var(--color-link-hover);
+    }
+}
+
+// Heading styles.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading);
+    text-wrap: balance;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+h1,
+.h1,
+.has-hg-h-1-font-size {
+    @include text-style(heading-600);
+}
+
+h2,
+.h2,
+.has-hg-h-2-font-size,
+.has-hg-background-number-font-size {
+    @include text-style(heading-500);
+}
+
+h3,
+.h3,
+.has-hg-h-3-font-size {
+    @include text-style(heading-400);
+}
+
+h4,
+.h4,
+.has-hg-h-4-font-size {
+    @include text-style(heading-300);
+}
+
+h5,
+.h5,
+h6,
+.h6,
+.has-hg-h-5-font-size {
+    @include text-style(heading-200);
+}
+
+.has-hg-600-font-size {
+    @include text-style(text-600);
+}
+
+.has-hg-subheading-font-size {
+    @include text-style(text-520);
+}
+
+.has-hg-background-number-font-size {
+    background-color: var(--color-bg-number);
+    border-radius: 5em;
+    display: grid;
+    height: 2.25em;
+    place-items: center;
+    width: 2.25em;
+}

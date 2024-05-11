@@ -1,0 +1,309 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+@import "./../../../style-imports/theme-imports";
+
+.filters-wrapper {
+    margin-bottom: var(--space-3xl);
+}
+
+.filters {
+    width: 100%;
+}
+
+.filters__form {
+    position: relative;
+}
+
+.filters__toggle {
+    @include text-style(text-510);
+    align-items: center;
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border-tax-link);
+    border-radius: var(--radius-minimal);
+    cursor: pointer;
+    display: flex;
+    gap: var(--space-xs);
+    padding: 0.675em 1.875em;
+    position: relative;
+    text-align: left;
+
+    &[aria-expanded="true"] {
+        border-color: var(--color-brand-blue-900);
+    }
+}
+
+.filters__count {
+    @include text-style(text-310);
+    background-color: var(--color-bg-card-footer);
+    border-radius: var(--radius-tiny);
+    margin-left: auto;
+    padding: 0.25em 0.5em;
+}
+
+.filters__search-submit {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}
+
+.filters__wrapper {
+    // For spesificity.
+    &.filters__wrapper {
+        margin-top: 0;
+    }
+
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    padding: var(--space-m) 0;
+    position: fixed;
+    top: 0;
+    overflow-y: auto;
+    transition: transform 0.35s, visibility 0.35s;
+    transform: translateX(-100%);
+    visibility: hidden;
+    width: min(95%, 26rem);
+    z-index: 1000;
+
+    &.is-opened {
+        transform: translateX(0);
+        visibility: visible;
+    }
+}
+
+/* Do not allow to scroll html element when filters are opened. */
+.filters-scroll-stop,
+.filters-scroll-stop body {
+    overflow-y: hidden;
+}
+
+.filters__overlay {
+    background-color: var(--color-grey-black);
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: fade-in-90 0.35s;
+    z-index: 900;
+
+    // For spesificity.
+    &.filters__overlay {
+        margin: 0;
+    }
+}
+
+.is-opened + .filters__overlay {
+    display: block;
+    opacity: 0.9;
+}
+
+.filters__close {
+    align-self: flex-end;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: calc(var(--space-m) - 2px);
+}
+
+.filters__fieldset-toggle {
+    @include text-style(text-510);
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-grey-800);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem var(--space-m);
+    width: 100%;
+
+    &:first-child {
+        border-top: 1px solid var(--color-grey-800);
+    }
+
+    &:last-of-type {
+        margin-bottom: var(--space-m);
+
+        &[aria-expanded="true"] {
+            margin-bottom: 0;
+        }
+    }
+
+    svg {
+        pointer-events: none;
+        transition: transform 0.35s;
+    }
+
+    &[aria-expanded="true"] {
+        background-color: var(--surface-blue-600);
+        border-bottom-color: transparent;
+
+        svg {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.filters__fieldset-toggle-text {
+    pointer-events: none;
+}
+
+.filters__fieldset-toggle-count {
+    color: var(--color-grey-400);
+}
+
+.filters__fieldset {
+    flex-direction: column;
+    gap: 0.75rem;
+    display: none;
+    padding: 0 var(--space-m) var(--space-m) var(--space-m);
+
+    /* Open filters when toggle button has [aria-expanded="true"].  */
+    [aria-expanded="true"] + & {
+        background-color: var(--surface-blue-600);
+        border-bottom: 1px solid var(--color-grey-800);
+        display: flex;
+    }
+
+    &:last-child {
+        margin-bottom: var(--space-m);
+    }
+}
+
+.filters__input-wrapper {
+    align-items: center;
+    display: flex;
+    gap: var(--space-xs);
+
+    input {
+        flex-shrink: 0;
+        margin: 0;
+    }
+
+}
+
+.filters__reset-submit {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    flex-wrap: wrap;
+    margin-top: auto;
+    padding-left: var(--space-m);
+    padding-right: var(--space-m);
+}
+
+.filters__reset {
+    @include text-style(text-btn);
+    font-weight: 500;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+}
+
+.filters-items {
+    position: relative;
+}
+
+.filters-items__content {
+    gap: var(--spacing-ml);
+    transition: opacity 0.3s;
+
+    &.is-loading {
+        opacity: 0.35;
+    }
+}
+
+.filters-items__load-more {
+    margin-top: var(--space-m);
+}
+
+.filters-items__load-more[hidden],
+.no-js .filters-items__load-more {
+    display: none;
+}
+
+.filters__selected {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+
+    .filters__reset {
+        margin-left: auto;
+    }
+
+    @include media(medium) {
+        display: none;
+    }
+}
+
+.filters__remove-filter {
+    background-color: var(--color-grey-050);
+    border: 0;
+    border-radius: var(--radius-tiny);
+    color: var(--text-main);
+    cursor: pointer;
+    font-size: var(--text-static-0875rem);
+    align-items: center;
+    display: inline-flex;
+    padding: 0.25em 0.5em;
+
+    svg {
+        fill: currentColor;
+        height: 1.5em;
+        width: 1.5em;
+    }
+}
+
+// Spinner.
+.filters__spinner {
+    position: absolute;
+    left: calc(50% - 1rem);
+    top: 2rem;
+    width: 100%;
+    z-index: 20;
+}
+
+.filters__spinner-icon {
+    height: 2rem;
+    width: 2rem;
+}
+
+.filters__spinner-circle {
+    animation: spinning-circle 2s linear infinite;
+    stroke: #111;
+}
+
+@keyframes spinning-circle {
+    0% {
+        stroke-dasharray: 150.6 100.4;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 1 250;
+    }
+    100% {
+        stroke-dasharray: 150.6 100.4;
+        stroke-dashoffset: 502;
+    }
+}
+
+@keyframes fade-in-90 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}

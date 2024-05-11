@@ -1,0 +1,15 @@
+// Editor relates CSS.
+.auto-grid-block {
+    .block-list-appender {
+        position: relative;
+        display: none;
+    }
+
+    &.is-selected,
+    &.is-child-selected,
+    &.has-child-selected {
+        .block-list-appender {
+            display: block;
+        }
+    }
+}

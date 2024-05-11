@@ -1,0 +1,100 @@
+/*
+ * If you have set breakspoints at settings.scss file,
+ * following classes are generated automatixally:
+ * .col-large-4, .col-medium-6, .col-small-12 etc.
+ *
+ * You can use .col-12, .col-6 etc as a default column.
+ * Automatic support for
+ *
+ */
+
+/* stylelint-disable */
+
+.row {
+    @include clearfix();
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        @include column($i/12);
+        @include media(medium) {
+            width: auto;
+            margin-right: 0;
+            float: none;
+        }
+    }
+}
+
+.col-3 {
+    @include column(3/12, $cycle: 12/3);
+    @include media(medium) {
+        width: auto;
+        margin-right: 0;
+        margin-left: 0;
+        float: none;
+        &:nth-child(n) {
+            float: none;
+            margin-right: 0;
+        }
+    }
+}
+.col-4 {
+    @include column(4/12, $cycle: 12/4);
+    @include media(medium) {
+        width: auto;
+        margin-right: 0;
+        margin-left: 0;
+        float: none;
+        &:nth-child(n) {
+            float: none;
+            margin-right: 0;
+        }
+    }
+}
+
+.col-6 {
+    @include column(6/12, $cycle: 12/6);
+    @include media(medium) {
+        width: auto;
+        margin-right: 0;
+        float: none;
+        &:nth-child(n) {
+            float: none;
+            margin-right: 0;
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    .offset-#{$i} {
+        @include column(0, $i/12);
+        @include media(medium) {
+            margin-left: 0;
+        }
+    }
+}
+
+
+@each $name, $size in $breakpoints {
+    @include media($name) {
+        @for $i from 1 through 12 {
+            .col-#{$name}-#{$i} {
+                @include column($i/12);
+                &:nth-child(n) {
+                    clear: none;
+                    margin-right: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+        .col-#{$name}-3 {
+            @include column(3/12, $cycle: 12/3);
+        }
+        .col-#{$name}-4 {
+            @include column(4/12, $cycle: 12/4);
+        }
+        .col-#{$name}-6 {
+            @include column(6/12, $cycle: 12/6);
+        }
+    }
+}

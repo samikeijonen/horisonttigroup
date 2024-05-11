@@ -1,0 +1,92 @@
+.card-item {
+    --nth-2-last-child-margin: var(--space-m);
+    --card-padding: var(--space-m);
+
+    background-color: var(--color-bg-card);
+    box-shadow: var(--box-shadow-l);
+    border-radius: var(--radius-large);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: 2rem;
+    position: relative;
+    transition: transform var(--transition-3) ease-out;
+
+    &:has(.is-absolute-link):hover,
+    &:focus-within {
+        transform: translateY(-0.25rem);
+    }
+
+    &__image {
+        border-radius: var(--radius-large) var(--radius-large) 0 0;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: var(--card-padding);
+
+        // So that last item doesn't collapse with this item.
+        > :nth-last-child(2) {
+            margin-bottom: var(--nth-2-last-child-margin);
+        }
+    }
+
+    &--house {
+        .card-item__content > :nth-last-child(2) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        color: var(--color-heading);
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: var(--color-heading);
+        }
+    }
+
+    &__subtitle {
+        @include text-style(text-520);
+        color: var(--color-sub-heading);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-size: var(--text-400);
+    }
+
+    &__house-info {
+        background-color: var(--color-bg-card-footer);
+        border-bottom-left-radius: var(--radius-large);
+        border-bottom-right-radius: var(--radius-large);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-m);
+        padding: var(--card-padding);
+    }
+
+    &__excerpt {
+        @include text-style(text-400);
+    }
+
+    &__taxonomy {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2xs);
+        margin-top: auto;
+
+        a {
+            border: 1px solid var(--color-border-tax-link);
+            border-radius: var(--radius-minimal);
+            color: var(--color-link-tax);
+            font-size: var(--text-300);
+            text-decoration: none;
+            padding: 0.5em 0.75em;
+            position: relative;
+            z-index: 20;
+        }
+    }
+}

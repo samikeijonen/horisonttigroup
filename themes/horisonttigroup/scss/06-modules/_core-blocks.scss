@@ -1,0 +1,517 @@
+// Buttons.
+.wp-block-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+
+    &.is-vertical {
+        flex-direction: column;
+    }
+
+    &.is-content-justification-left {
+        justify-content: flex-start;
+
+        &.is-vertical {
+            align-items: flex-start;
+        }
+    }
+
+    &.is-content-justification-center {
+        justify-content: center;
+
+        &.is-vertical {
+            align-items: center;
+        }
+    }
+
+    &.is-content-justification-right {
+        justify-content: flex-end;
+    }
+}
+
+// Core columns block.
+.wp-block-columns {
+    display: flex;
+    gap: var(--gutter);
+
+    // Responsiveness: Allow wrapping on mobile.
+    flex-wrap: wrap !important;
+
+    @include media-min(medium) {
+        flex-wrap: nowrap !important;
+    }
+
+    /**
+	* All Columns Alignment
+	*/
+    &.are-vertically-aligned-top {
+        align-items: flex-start;
+    }
+
+    &.are-vertically-aligned-center {
+        align-items: center;
+    }
+
+    &.are-vertically-aligned-bottom {
+        align-items: flex-end;
+    }
+
+    &:not(.is-not-stacked-on-mobile) > .wp-block-column {
+        @include media(medium) {
+            // Responsiveness: Show at most one columns on mobile. This must be
+            // important since the Column assigns its own width as an inline style.
+            flex-basis: 100% !important;
+        }
+
+        // At large viewports, show all columns horizontally.
+        @include media-min(medium) {
+            // Available space should be divided equally amongst columns without an
+            // assigned width. This is achieved by assigning a flex basis that is
+            // consistent (equal), would not cause the sum total of column widths to
+            // exceed 100%, and which would cede to a column with an assigned width.
+            // The `flex-grow` allows columns to maximally and equally occupy space
+            // remaining after subtracting the space occupied by columns with
+            // explicit widths (if any exist).
+            flex-basis: 0;
+            flex-grow: 1;
+
+            // Columns with an explicitly-assigned width should maintain their
+            // `flex-basis` width and not grow.
+            &[style*="flex-basis"] {
+                flex-grow: 0;
+            }
+
+            // Sticky column.
+            &.is-style-column-sticky {
+                position: sticky;
+                top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--site-header-height, 0px) + var(--space-m, 3rem));
+            }
+        }
+    }
+
+    &.is-not-stacked-on-mobile {
+        flex-wrap: nowrap !important;
+
+        > .wp-block-column {
+            // Available space should be divided equally amongst columns.
+            flex-basis: 0;
+
+            flex-grow: 1;
+            // Columns with an explicitly-assigned width should maintain their
+            // `flex-basis` width and not grow.
+            &[style*="flex-basis"] {
+                flex-grow: 0;
+            }
+        }
+    }
+}
+
+/* Gallery. */
+.wp-block-gallery {
+    align-items: flex-start !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem !important;
+
+    > .wp-block-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    &.has-nested-images {
+        // Cropped Images.
+        &.is-cropped figure.wp-block-image:not(#individual-image) {
+            align-self: inherit;
+            > div:not(.components-drop-zone),
+            > a {
+                display: flex;
+            }
+
+            a {
+                cursor: zoom-in;
+            }
+
+            a,
+            img,
+            // For the editor.
+            div {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.wp-block-column {
+    flex-grow: 1;
+
+    // Prevent the columns from growing wider than their distributed sizes.
+    min-width: 0;
+
+    /**
+	* Individual Column Alignment
+	*/
+    &.is-vertically-aligned-top {
+        align-self: flex-start;
+    }
+
+    &.is-vertically-aligned-center {
+        align-self: center;
+    }
+
+    &.is-vertically-aligned-bottom {
+        align-self: flex-end;
+    }
+
+    &.is-vertically-aligned-stretch {
+        align-self: stretch;
+    }
+
+    &.is-vertically-aligned-top,
+    &.is-vertically-aligned-center,
+    &.is-vertically-aligned-bottom {
+        width: 100%;
+    }
+}
+
+// Embeds.
+.wp-has-aspect-ratio iframe {
+    aspect-ratio: 16 / 9;
+    height: 100%;
+    width: 100%;
+}
+
+// Core Image block.
+// Note that from WP 6.0 markup is different than before when theme.json is in use. Let's support both markup.
+// However, using alingleft or right with caption is still visually broken :( Same as in 2022 default theme.
+// @link: https://make.wordpress.org/core/2022/05/03/block-markup-updates-for-image-quote-list-and-group-blocks/
+.wp-block-image {
+    .alignleft,
+    &.alignleft img {
+        float: none;
+        margin-right: 0;
+        @include media-min(medium) {
+            float: left;
+            margin-right: var(--gutter);
+        }
+    }
+
+    .alignright,
+    &.alignright img {
+        float: none;
+        margin-left: 0;
+        @include media-min(medium) {
+            float: right;
+            margin-left: var(--gutter);
+        }
+    }
+
+    &.alignwide img,
+    &.alignfull img {
+        // Force taking over the full width of it's container.
+        width: 100%;
+    }
+
+    figcaption {
+        color: inherit;
+        text-align: center;
+    }
+
+    &.is-style-rounded img {
+        border-radius: var(--radius-brand);
+    }
+}
+
+// Block variotion for image.
+.meom-icon-with-borders img {
+    border-bottom-right-radius: var(--radius-large);
+    border: 1px dashed currentColor;
+    padding: 1rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.meom-icon-with-background {
+    background-color: var(--color-bg-icon);
+    border-radius: var(--radius-brand);
+    padding: var(--space-m-3xl);
+}
+
+// Separator block.
+.wp-block-separator,
+hr {
+    background-color: var(--color-border-light);
+    border: 0;
+    height: 0.0625rem;
+
+    &.is-style-wide {
+        height: 0.125rem;
+    }
+
+    // Dots style
+    &.is-style-dots {
+        // Override any background themes often set on the hr tag for this style.
+        // also override the color set in the editor since it's intented for normal HR
+        background: none !important;
+        border: none;
+        text-align: center;
+        line-height: 1;
+        height: auto;
+
+        &::before {
+            content: "\00b7 \00b7 \00b7";
+            color: currentColor;
+            font-size: 1.5em;
+            letter-spacing: 2em;
+            /*rtl:ignore*/
+            padding-left: 2em;
+            font-family: serif;
+        }
+    }
+}
+
+// Blockquote block.
+.wp-block-quote,
+blockquote,
+.is-root-container.block-editor-block-list__layout > blockquote {
+    --spacing-icon: var(--space-s-m);
+    /* stylelint-disable-next-line */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' clip-rule='evenodd' fill-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2' viewBox='0 0 24 30' x='0px' y='0px'%3E%3Cpath d='m21.301 4c.411 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.738 4.129-4.308 4.129-3.24 0-4.83-2.547-4.83-5.307 0-5.98 6.834-10.693 8.468-10.693zm-10.833 0c.41 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.739 4.129-4.308 4.129-3.241 0-4.83-2.547-4.83-5.307 0-5.98 6.833-10.693 8.468-10.693z' fill='rgba(0, 0, 0, 0.1)' fill-rule='nonzero'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 8%;
+    padding-left: var(--spacing-icon);
+    padding-top: var(--spacing-icon);
+
+    .has-hg-grey-black-background-color & {
+        /* stylelint-disable-next-line */
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' clip-rule='evenodd' fill-rule='evenodd' stroke-linejoin='round' stroke-miterlimit='2' viewBox='0 0 24 30' x='0px' y='0px'%3E%3Cpath d='m21.301 4c.411 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.738 4.129-4.308 4.129-3.24 0-4.83-2.547-4.83-5.307 0-5.98 6.834-10.693 8.468-10.693zm-10.833 0c.41 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.739 4.129-4.308 4.129-3.241 0-4.83-2.547-4.83-5.307 0-5.98 6.833-10.693 8.468-10.693z' fill='rgba(255, 255, 255, 0.2)' fill-rule='nonzero'/%3E%3C/svg%3E");
+    }
+
+    > * + * {
+        margin-top: var(--space-m);
+    }
+
+    .wp-block-image {
+        height: 10rem;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10rem;
+
+        img {
+            border-radius: var(--radius-brand, 0.5rem);
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    p {
+        @include text-style(heading-400);
+        font-family: var(--font-family-secondary);
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    cite,
+    // Editor only have this class, not <cite> markup.
+    .wp-block-quote__citation {
+        align-items: center;
+        display: flex !important;
+        flex-wrap: wrap;
+        gap: var(--space-2xs);
+        font-style: normal;
+
+        img {
+            border-radius: 50%;
+            flex-shrink: 0;
+            height: 2.5em;
+            width: 2.5em !important;
+            object-fit: cover;
+        }
+
+        strong {
+            font-weight: 400;
+        }
+    }
+}
+
+// Table block.
+.has-fixed-layout {
+    table-layout: fixed;
+}
+
+// Group.
+.wp-block-group {
+    &.has-background {
+        &.alignwide {
+            border-radius: var(--radius-brand, 0.5rem);
+            padding: var(--space-l);
+        }
+
+        &.alignfull {
+            padding: var(--space-3xl) var(--side-padding);
+
+            &:first-child {
+                border-bottom-right-radius: calc(var(--side-padding) + var(--space-l));
+            }
+        }
+    }
+}
+
+// Social links.
+.wp-block-social-links {
+    // This block has customizable padding, border-box makes that more predictable.
+    box-sizing: border-box;
+
+    padding-left: 0;
+    padding-right: 0;
+    // Some themes set text-indent on all <ul>
+    text-indent: 0;
+    // Some themes give all <ul> default margin instead of padding.
+    margin-left: 0;
+
+    // Unset background colors that can be inherited from Global Styles.
+    background: none;
+
+    gap: var(--space-xs);
+
+    // Some themes add underlines, false underlines (via shadows), and borders to <a>.
+    .wp-social-link a,
+    .wp-social-link a:hover {
+        text-decoration: none;
+        border-bottom: 0;
+        box-shadow: none;
+    }
+
+    .wp-social-link {
+        // By setting the font size, we can scale icons and paddings consistently based on that.
+        // This also allows themes to override this, if need be.
+        a {
+            background-color: var(--color-grey-white);
+            border-radius: 50%;
+            color: var(--color-grey-black);
+            padding: 0.375em;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: var(--color-grey-black);
+            }
+        }
+
+        svg {
+            width: 1em;
+            height: 1em;
+        }
+
+        span:not(.screen-reader-text) {
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            font-size: 0.65em;
+        }
+    }
+
+    // Icon sizes.
+    // Small.
+    &.has-small-icon-size {
+        font-size: 16px; // 16 makes for a quarter-padding that keeps the icon centered.
+    }
+
+    // Normal/default.
+    &,
+    &.has-normal-icon-size {
+        font-size: 24px;
+    }
+
+    // Large.
+    &.has-large-icon-size {
+        font-size: 36px;
+    }
+
+    // Huge.
+    &.has-huge-icon-size {
+        font-size: 48px;
+    }
+
+    // Center flex items. This has an equivalent in editor.scss.
+    // It also needs to override some of the default classes usually applied to the centering class.
+    // align left must not be set, because this is the default (flex-start).
+    &.aligncenter {
+        justify-content: center;
+        display: flex;
+    }
+
+    &.alignright {
+        justify-content: flex-end;
+    }
+}
+
+.wp-block-social-link {
+    display: block;
+    border-radius: 9999px; // This makes it pill-shaped instead of oval, in cases where the image fed is not perfectly sized.
+    transition: transform var(--transition-3) ease;
+
+    // Dimensions.
+    height: auto;
+
+    a {
+        align-items: center;
+        display: flex;
+        line-height: 0;
+        transition: transform var(--transition-3) ease;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+// This needs specificity because themes usually override it with things like .widget-area a.
+.wp-block-social-links .wp-block-social-link.wp-social-link {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    .wp-block-social-link-anchor {
+        svg {
+            color: currentColor;
+            fill: currentColor;
+        }
+    }
+}
+
+// Treatment for logos only style.
+.wp-block-social-links.is-style-logos-only {
+    .wp-social-link {
+        background: none;
+
+        // Make these bigger.
+        svg {
+            width: 1.25em;
+            height: 1.25em;
+        }
+    }
+}
+
+// Treatment for pill shape style.
+.wp-block-social-links.is-style-pill-shape {
+    .wp-social-link {
+        width: auto;
+    }
+
+    .wp-social-link a {
+        padding-left: calc((2 / 3) * 1em);
+        padding-right: calc((2 / 3) * 1em);
+    }
+}
+
+// Ensure the Snapchat label is visible when no custom
+// icon color or background color is set.
+.wp-block-social-links:not(.has-icon-color):not(.has-icon-background-color) {
+    .wp-social-link-snapchat {
+        .wp-block-social-link-label {
+            color: #000;
+        }
+    }
+}

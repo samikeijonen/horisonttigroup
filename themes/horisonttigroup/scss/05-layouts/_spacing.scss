@@ -1,0 +1,135 @@
+// Base top margin between elements in the content.
+.content-area > * + *,
+.margin-top-children > * + *,
+.column > * + *,
+.wp-block-column > * + *,
+.wp-block-group > * + *,
+// For editor.
+.is-root-container > * + * {
+    margin-bottom: 0;
+    margin-top: var(--space-m);
+}
+
+.margin-top-children--2xl > * + * {
+    margin-top: var(--space-2xl);
+}
+
+.margin-top-children--xl > * + * {
+    margin-top: var(--space-xl);
+}
+
+.margin-top-children--s > * + * {
+    margin-top: var(--space-s);
+}
+
+.margin-top-children--xs > * + * {
+    margin-top: var(--space-xs);
+}
+
+.content-area > h2,
+.wp-block-group > h2,
+.content-area > h3,
+.wp-block-group > h3,
+:where(.content-area, .wp-block-group) > h4,
+// For editor.
+.is-root-container > h2,
+.is-root-container > h3,
+.is-root-container > h4 {
+    margin-top: 2em;
+}
+
+// Small space around modules.
+:where(.content-area, .wp-block-group) > .margin-top-small,
+.is-root-container > .margin-top-small,
+:where(.content-area, .wp-block-group) > .wp-block-separator,
+:where(:where(.content-area, .wp-block-group), .wp-block-group) > hr,
+.is-root-container > hr,
+.wp-block-image.alignwide,
+.wp-block-image.alignfull,
+:where(.content-area, .wp-block-group) > .wp-block-quote,
+.is-root-container > blockquote,
+// Next element top margin.
+:where(.content-area, .wp-block-group) > .margin-top-small + *,
+.is-root-container > .margin-top-small + *,
+:where(.content-area, .wp-block-group) > .wp-block-separator + *,
+:where(.content-area, .wp-block-group) > hr + *,
+.is-root-container > hr + *,
+.wp-block-image.alignwide + *,
+.wp-block-image.alignfull + *,
+:where(.content-area, .wp-block-group) > .wp-block-quote + *,
+.is-root-container > blockquote + * {
+    margin-top: var(--margin-top-small);
+}
+
+// Helper class for unifying bigger vertical space around modules.
+// Add new classes if you can't add class `margin-top-default` to the module.
+:where(.content-area, .wp-block-group) > .margin-top-default,
+.is-root-container > .margin-top-default,
+:where(.content-area, .wp-block-group) > .wp-block-columns,
+.is-root-container > .wp-block-columns,
+:where(.content-area, .wp-block-group) > .wp-block-group,
+.is-root-container > .wp-block-group,
+// Next element top margin inside the content area.
+// This means that the same module handles it's own top margin and next module top margin.
+// Therefore negative margins are not needed and top margin can be reseted to zero when needed.
+:where(.content-area, .wp-block-group) > .margin-top-default + *,
+.is-root-container > .margin-top-default + *,
+:where(.content-area, .wp-block-group) > .wp-block-columns + *,
+.is-root-container > .wp-block-columns + *,
+:where(.content-area, .wp-block-group) > .wp-block-group + *,
+.is-root-container > .wp-block-group + * {
+    margin-top: var(--margin-top-default);
+}
+
+.content-area,
+.is-root-container {
+    > :first-child {
+        margin-top: var(--margin-top-small);
+    }
+
+    > :last-child {
+        margin-bottom: var(--margin-top-medium);
+    }
+
+    > .has-background:first-child {
+        margin-top: 0;
+    }
+
+    > .has-background:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.wp-block-group + .posts-list {
+    margin-top: var(--space-l);
+}
+
+.wp-block-heading + .margin-top-default,
+p + .wp-block-buttons {
+    margin-top: var(--space-l);
+}
+
+.margin-top-default + .wp-block-buttons {
+    margin-top: var(--space-l);
+}
+
+.has-hg-subheading-font-size + .wp-block-heading {
+    margin-top: var(--space-2xs);
+}
+
+.has-background.alignfull + .has-background.alignfull,
+footer.wp-block-group {
+    margin-top: 0;
+}
+
+
+// Center container.
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.side-padding {
+    padding-left: var(--side-padding);
+    padding-right: var(--side-padding);
+}

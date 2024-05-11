@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "meomblocks/house-info",
+	"version": "0.1.0",
+	"title": "Kohteen tärkeimmät tiedot",
+	"category": "meomblocks",
+	"keywords": [
+		"artikkeli",
+		"auto",
+		"meomblocks"
+	],
+	"description": "Näyttää kohteesta tärkeimmät tiedot kuten velaton myyntihinta ja vuokratuotto.",
+	"attributes": {
+		"showInGrid": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"example": {},
+	"supports": {
+		"html": false,
+		"spacing": {
+			"margin": [ "top" ]
+		}
+	},
+	"textdomain": "meomblocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

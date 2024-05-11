@@ -1,0 +1,109 @@
+@use "sass:math";
+@use "sass:map";
+
+@function strip-unit($number) {
+    @if type-of($number) == "number" and not unitless($number) {
+        @return math.div($number, $number * 0 + 1);
+    }
+    @return $number;
+}
+
+@mixin font-size($sizeValue: 1) {
+    font-size: math.div($sizeValue, 16) * 1rem;
+}
+
+@mixin letter-spacing($spacing: 0, $fontsize: 1rem) {
+    letter-spacing: (strip-unit($spacing) / strip-unit($fontsize)) + em;
+}
+
+@mixin line-height($line-height: 0, $fontsize: 1rem) {
+    line-height: (strip-unit($line-height) / strip-unit($fontsize));
+}
+
+@mixin clearfix() {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin reset-list() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin reset-button-style() {
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: rgba(255, 255, 255, 0);
+}
+
+@mixin media($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: #{map.get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin media-min($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: #{(map.get($breakpoints, $breakpoint) + 0.001)}) {
+            @content;
+        }
+    } @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin object-fit($fit: cover, $position: center center) {
+    object-fit: $fit;
+    object-position: $position;
+}
+
+// Text styles: Helper mixing.
+@mixin generate-text-settings($styles) {
+    @if map-has-key($styles, font-size) {
+        font-size: map.get($styles, font-size);
+    }
+    @if map-has-key($styles, letter-spacing) {
+        letter-spacing: map.get($styles, letter-spacing);
+    }
+    @if map-has-key($styles, line-height) {
+        line-height: map.get($styles, line-height);
+    }
+    @if map-has-key($styles, font-family) {
+        font-family: map.get($styles, font-family);
+    }
+    @if map-has-key($styles, font-weight) {
+        font-weight: map.get($styles, font-weight); // stylelint-disable-line
+    }
+    @if map-has-key($styles, text-transform) {
+        text-transform: map.get($styles, text-transform);
+    }
+    @if map-has-key($styles, font-style) {
+        font-style: map.get($styles, font-style);
+    }
+}
+
+// Text styles: Get styles.
+@mixin text-style($style) {
+    @if map-has-key($text-styles, $style) {
+        $text: map.get($text-styles, $style);
+        @include generate-text-settings($text);
+        @if map-has-key( $text, media-queries ) {
+            $media-queries: map.get($text, media-queries);
+            @each $name, $settings in $media-queries {
+                $media-text: map.get($media-queries, $name);
+                @include media($name) {
+                    @include generate-text-settings($media-text);
+                }
+            }
+        }
+    }
+}

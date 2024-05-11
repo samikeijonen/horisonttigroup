@@ -1,0 +1,98 @@
+.btn,
+.wp-block-button__link,
+.is-menu-button a,
+input[type="submit"],
+.gform_wrapper input[type="submit"],
+// Gravity forms button.
+.gform_button,
+// Hubspot button.
+.hs-button {
+    --button-bg: var(--color-grey-black);
+    --button-bg-hover: var(--color-grey-800);
+
+    --button-border: var(--color-grey-black);
+    --button-border-hover: var(--color-grey-800);
+
+    --button-color: var(--color-grey-white);
+    --button-color-hover: var(--color-grey-white);
+
+    --button-outline: var(--color-grey-black);
+
+    @include text-style(text-510);
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    border-radius: 3em;
+    color: var(--button-color);
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0.675em 1.875em;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: var(--button-bg-hover);
+        border-color: var(--button-border-hover);
+        color: var(--button-color-hover);
+    }
+
+    &:focus {
+        outline: var(--button-outline) solid 2px;
+        outline-offset: 2px;
+    }
+
+    // If :focus-visible is supported, remove "mouse interaction" focus styles.
+    &:focus:not(:focus-visible) {
+        outline: none;
+    }
+}
+
+.is-style-outline .btn,
+.is-style-outline .wp-block-button__link,
+.is-menu-button a {
+    --button-bg: transparent;
+
+    --button-border: var(--color-border-secondary);
+    --button-border-hover: var(--color-border-secondary);
+
+    --button-color: var(--color-text-primary);
+    --button-color-hover: var(--color-grey-white);
+}
+
+.hero .btn,
+.hero .wp-block-button__link,
+.has-hg-grey-black-background-color .btn,
+.has-hg-grey-black-background-color .wp-block-button__link,
+footer.wp-block-group .btn,
+footer.wp-block-group .wp-block-button__link,
+.big-cta .btn,
+.big-cta .wp-block-button__link,
+.has-hg-grey-black-background-color .gform_wrapper input[type="submit"],
+// Gravity forms button.
+.has-hg-grey-black-background-color .gform_button,
+// Hubspot button.
+.has-hg-grey-black-background-color .hs-button {
+    --button-bg: var(--color-grey-white);
+    --button-border: var(--color-grey-white);
+    --button-color: var(--color-grey-black);
+}
+
+footer.wp-block-group .btn,
+footer.wp-block-group .wp-block-button__link, {
+    --button-border-hover: transparent;
+
+}
+
+.hero .is-style-outline .btn,
+.hero .is-style-outline .wp-block-button__link,
+.has-hg-grey-black-background-color .is-style-outline .btn,
+.has-hg-grey-black-background-color .is-style-outline .wp-block-button__link,
+.big-cta .is-style-outline .btn,
+.big-cta .is-style-outline .wp-block-button__link {
+    --button-bg: transparent;
+
+    --button-border: var(--color-grey-white);
+    --button-border-hover: var(--color-border-secondary);
+
+    --button-color: var(--color-grey-white);
+}

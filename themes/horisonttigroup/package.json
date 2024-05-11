@@ -1,0 +1,26 @@
+{
+	"name": "horisonttigroup",
+	"version": "0.1.0",
+	"description": "Horisonttigroup theme.",
+	"author": "Sami Keijonen",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^27",
+		"browser-sync": "^2",
+		"browser-sync-webpack-plugin": "^2.3.0"
+	},
+	"dependencies": {
+		"@meom/navigation": "^1.2.0",
+		"path": "^0.12.7",
+		"webpack-remove-empty-scripts": "^1.0.4"
+	}
+}

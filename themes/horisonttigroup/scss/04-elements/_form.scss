@@ -1,0 +1,118 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea,
+select {
+    @include text-style(text-500);
+    display: block;
+    background-color: var(--color-form-background);
+    border: 2px solid var(--color-form-border);
+    border-radius: var(--radius-brand);
+    box-shadow: unset;
+    padding: 0.75em;
+    width: 100%;
+    transition: all var(--transition-3);
+
+    &:focus {
+        outline: none;
+        border-color: var(--color-form-focus);
+        box-shadow: unset;
+    }
+
+    &::placeholder {
+        opacity: 0.8;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+select {
+    appearance: none;
+    // Icon color is set in stroke attribute. Use %23 instead of # in hex colors.
+    /* stylelint-disable-next-line */
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path d="M25.3336 12.957L16.0003 22.2904L6.66699 12.957" stroke="%23000" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>');
+    background-position: right var(--space-xs) center;
+    background-repeat: no-repeat;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    --border-width: 0.0625rem;
+    --input-size: calc(1em + 2 * var(--border-width));
+    appearance: none;
+    display: block;
+    content: "";
+    flex-shrink: 0;
+    width: var(--input-size);
+    height: var(--input-size);
+    margin: 0 0 0 var(--border-width);
+    padding: 0;
+    background: var(--color-form-background);
+    border: 0;
+    border-radius: 0.125rem;
+    box-shadow: 0 0 0 var(--border-width) var(--color-form-border); // Box shadow is used as border to save the real border for radio button checked style
+    transition: box-shadow var(--transition-3);
+
+    &:checked {
+        box-shadow: 0 0 0 var(--border-width) var(--color-form-border);
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 var(--border-width) var(--color-form-focus);
+        outline: none;
+    }
+}
+
+input[type="checkbox"] {
+    &:checked {
+        background: var(--color-form-background) no-repeat center;
+        // Icon color is set in the path fill attribute. Use %23 instead of # in hex colors.
+        /* stylelint-disable-next-line */
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M12.1134 1.0511L4.6346 8.52992L1.88661 5.78192C1.75337 5.64869 1.53735 5.64869 1.40409 5.78192L0.599924 6.58609C0.466692 6.71932 0.466692 6.93535 0.599924 7.06861L4.39333 10.862C4.52656 10.9952 4.74258 10.9952 4.87584 10.862L13.4001 2.33778C13.5333 2.20455 13.5333 1.98852 13.4001 1.85526L12.5959 1.0511C12.4627 0.917864 12.2467 0.917864 12.1134 1.0511Z" fill="%23000" /></svg>');
+        background-size: 0.59em;
+    }
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+
+    &:checked {
+        background: var(--color-radio-fill);
+        border: 0.1875rem solid var(--color-form-background);
+    }
+}
+
+.has-hg-grey-black-background-color {
+    select {
+        // Icon color is set in stroke attribute. Use %23 instead of # in hex colors.
+        /* stylelint-disable-next-line */
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="33" viewBox="0 0 32 33" fill="none"><path d="M25.3336 12.957L16.0003 22.2904L6.66699 12.957" stroke="%23fff" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/></svg>');
+    }
+
+    input[type="checkbox"] {
+        &:checked {
+            // Icon color is set in the path fill attribute. Use %23 instead of # in hex colors.
+            /* stylelint-disable-next-line */
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none"><path d="M12.1134 1.0511L4.6346 8.52992L1.88661 5.78192C1.75337 5.64869 1.53735 5.64869 1.40409 5.78192L0.599924 6.58609C0.466692 6.71932 0.466692 6.93535 0.599924 7.06861L4.39333 10.862C4.52656 10.9952 4.74258 10.9952 4.87584 10.862L13.4001 2.33778C13.5333 2.20455 13.5333 1.98852 13.4001 1.85526L12.5959 1.0511C12.4627 0.917864 12.2467 0.917864 12.1134 1.0511Z" fill="%23fff" /></svg>');
+        }
+    }
+}

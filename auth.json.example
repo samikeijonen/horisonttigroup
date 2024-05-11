@@ -1,0 +1,8 @@
+{
+    "http-basic": {
+        "connect.advancedcustomfields.com": {
+            "username": "add-licence-key",
+            "password": "https://add-site-url"
+        }
+    }
+}
