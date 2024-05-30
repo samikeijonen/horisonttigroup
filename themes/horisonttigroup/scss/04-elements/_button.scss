@@ -2,6 +2,8 @@
 .wp-block-button__link,
 .is-menu-button a,
 input[type="submit"],
+.gform_wrapper input[type="button"],
+.gform_wrapper button,
 .gform_wrapper input[type="submit"],
 // Gravity forms button.
 .gform_button,
@@ -67,6 +69,8 @@ footer.wp-block-group .btn,
 footer.wp-block-group .wp-block-button__link,
 .big-cta .btn,
 .big-cta .wp-block-button__link,
+.has-hg-grey-black-background-color .gform_wrapper input[type="button"],
+.gform_wrapper button,
 .has-hg-grey-black-background-color .gform_wrapper input[type="submit"],
 // Gravity forms button.
 .has-hg-grey-black-background-color .gform_button,

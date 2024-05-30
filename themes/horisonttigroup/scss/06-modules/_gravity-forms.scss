@@ -119,3 +119,9 @@
 .gform_footer {
     margin: var(--space-m) 0 0;
 }
+
+.gform_page_footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s);
+}
