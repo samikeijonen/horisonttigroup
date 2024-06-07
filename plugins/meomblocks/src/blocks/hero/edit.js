@@ -77,7 +77,6 @@ export default function Edit( props ) {
                 <figure className="hero__image aspect-ratio aspect-ratio--1-1">
                     <ImageSelect
                         image={ image }
-                        class={ 'is-cover-img' }
                         onChange={ ( imageNew ) =>
                             setAttributes( { image: imageNew } )
                         }
