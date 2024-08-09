@@ -13,6 +13,7 @@ $class_names = [
 $container_class_names = [
     'house-info__container',
     'grid-auto',
+    'has-4-columns',
     ! $show_in_grid ? 'has-1-columns' : '',
 ];
 
@@ -22,6 +23,7 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => implode( ' ', $
         <?php
             $fields = [
                 __( 'Velaton hinta', 'meomblocks' )   => 'house_price',
+                __( 'Myyntihinta', 'meomblocks' )     => 'house_price_sell',
                 __( 'Kassavirta / kk', 'meomblocks' ) => 'house_cash_flow',
                 __( 'Vuokratuotto', 'meomblocks' )    => 'house_income_procent',
             ];
@@ -36,7 +38,7 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => implode( ' ', $
                         </span>
                         <span class="house-info__item-value">
                             <?php echo esc_attr( $value ); ?>
-                            <?php if ( $field === 'house_price' || $field === 'house_cash_flow' ) : ?>
+                            <?php if ( $field === 'house_price' || $field === 'house_price_sell' || $field === 'house_cash_flow' ) : ?>
                                 &euro;
                             <?php elseif ( $field === 'house_income_procent' ) : ?>
                                 &#37;

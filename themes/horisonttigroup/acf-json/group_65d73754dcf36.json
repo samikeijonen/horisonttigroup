@@ -143,6 +143,46 @@
             "append": ""
         },
         {
+            "key": "field_66b4be72e4006",
+            "label": "Myyntihinta",
+            "name": "house_price_sell",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66b4c197944a6",
+            "label": "Velkaosuus",
+            "name": "house_debt",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_65d9a676203e7",
             "label": "Vuokra",
             "name": "house_rent",
@@ -166,6 +206,26 @@
             "key": "field_65d9a6c0203e8",
             "label": "Hoitovastike",
             "name": "house_maintenance_charge",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66b4c1c439a97",
+            "label": "Rahoitusvastike",
+            "name": "house_financial",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -261,5 +321,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712817765
+    "modified": 1723122164
 }
