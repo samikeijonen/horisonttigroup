@@ -6,8 +6,4 @@
         color: var(--color-sub-heading);
         display: block;
     }
-
-    &__item-value {
-        @include text-style(heading-500);
-    }
 }
