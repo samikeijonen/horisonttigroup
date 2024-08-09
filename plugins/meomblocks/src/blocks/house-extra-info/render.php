@@ -10,14 +10,16 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => implode( ' ', $
 <div <?php echo $wrapper_attributes; // phpcs:ignore ?>>
     <?php
         $fields = [
-            __( 'Osoite', 'meomblocks' )       => 'house_address',
-            __( 'Huoneisto', 'meomblocks' )    => 'house_flat',
-            __( 'Tyyppi', 'meomblocks' )       => 'house_type',
-            __( 'Kerros', 'meomblocks' )       => 'house_which_floor',
-            __( 'Pinta-ala', 'meomblocks' )    => 'house_area',
-            __( 'Vuokra', 'meomblocks' )       => 'house_rent',
-            __( 'Hoitovastike', 'meomblocks' ) => 'house_maintenance_charge',
-            __( 'Tontti', 'meomblocks' )       => 'house_plot',
+            __( 'Osoite', 'meomblocks' )          => 'house_address',
+            __( 'Huoneisto', 'meomblocks' )       => 'house_flat',
+            __( 'Tyyppi', 'meomblocks' )          => 'house_type',
+            __( 'Kerros', 'meomblocks' )          => 'house_which_floor',
+            __( 'Pinta-ala', 'meomblocks' )       => 'house_area',
+            __( 'Vuokra', 'meomblocks' )          => 'house_rent',
+            __( 'Hoitovastike', 'meomblocks' )    => 'house_maintenance_charge',
+            __( 'Rahoitusvastike', 'meomblocks' ) => 'house_financial',
+            __( 'Velkaosuus', 'meomblocks' )      => 'house_debt',
+            __( 'Tontti', 'meomblocks' )          => 'house_plot',
         ];
     ?>
 
@@ -35,7 +37,7 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => implode( ' ', $
                                 </th>
                                 <td class="house-extra-info__item-value">
                                     <?php echo esc_attr( $value ); ?>
-                                    <?php if ( $field === 'house_rent' || $field === 'house_maintenance_charge' ) : ?>
+                                    <?php if ( $field === 'house_rent' || $field === 'house_maintenance_charge' || $field === 'house_financial' || $field === 'house_debt' ) : ?>
                                         &euro;
                                     <?php elseif ( $field === 'house_area' ) : ?>
                                         m<sup>2</sup>

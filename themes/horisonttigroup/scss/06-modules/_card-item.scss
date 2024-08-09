@@ -58,6 +58,12 @@
         font-size: var(--text-400);
     }
 
+    &__price-info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-m);
+    }
+
     &__house-info {
         background-color: var(--color-bg-card-footer);
         border-bottom-left-radius: var(--radius-large);

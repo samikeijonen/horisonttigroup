@@ -11,6 +11,7 @@ $taxonomy_slug = ! empty( $args['taxonomy'] ) ? $args['taxonomy'] : 'category';
 $card_title     = get_field( 'house_card_title', $item_id );
 $typeh          = get_field( 'house_type', $item_id );
 $price          = get_field( 'house_price', $item_id );
+$price_sell     = get_field( 'house_price_sell', $item_id );
 $cash_flow      = get_field( 'house_cash_flow', $item_id );
 $income_procent = get_field( 'house_income_procent', $item_id );
 ?>
@@ -53,9 +54,24 @@ $income_procent = get_field( 'house_income_procent', $item_id );
                         );
                     ?>
                 </span>
-                <?php echo esc_html( $price ); ?> &euro;
             </a>
         </h3>
+
+        <div class="card-item__price-info">
+            <?php if ( $price ) : ?>
+                <p class="card-item__house-card-title">
+                    <span class="card-item__subtitle"><?php esc_html_e( 'Velaton hinta', 'kala' ); ?></span>
+                    <span class="card-item__price-sell h4"><?php echo esc_html( $price ); ?> &euro;</span>
+                </p>
+            <?php endif; ?>
+
+            <?php if ( $price_sell ) : ?>
+                <p class="card-item__house-card-title">
+                    <span class="card-item__subtitle"><?php esc_html_e( 'Myyntihinta', 'kala' ); ?></span>
+                    <span class="card-item__price-sell h4"><?php echo esc_html( $price_sell ); ?> &euro;</span>
+                </p>
+            <?php endif; ?>
+        </div>
 
         <?php if ( $card_title ) : ?>
             <p class="card-item__house-card-title">
