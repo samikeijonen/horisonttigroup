@@ -36,7 +36,7 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => implode( ' ', $
                         <span class="house-info__item-label">
                             <?php echo wp_kses_post( $label ); ?>
                         </span>
-                        <span class="house-info__item-value">
+                        <span class="house-info__item-value h3">
                             <?php echo esc_attr( $value ); ?>
                             <?php if ( $field === 'house_price' || $field === 'house_price_sell' || $field === 'house_cash_flow' ) : ?>
                                 &euro;
