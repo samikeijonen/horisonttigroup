@@ -9,6 +9,12 @@ wp.domReady( () => {
     // Unregister table styles.
     wp.blocks.unregisterBlockStyle( 'core/table', 'stripes' );
 
+    // Register button styles.
+    wp.blocks.registerBlockStyle( 'core/button', {
+        name: 'button-gradient',
+        label: 'Gradientti',
+    } );
+
     // Register list styles.
     wp.blocks.registerBlockStyle( 'core/list', {
         name: 'list-reset',
