@@ -81,6 +81,26 @@ footer.wp-block-group .wp-block-button__link,
     --button-color: var(--color-grey-black);
 }
 
+.is-style-button-gradient .btn,
+.is-style-button-gradient .wp-block-button__link {
+    --button-bg: linear-gradient(90deg, var(--color-orange) 0%, var(--color-red) 100%);
+    --button-bg-hover: linear-gradient(90deg, var(--color-red) 0%, var(--color-orange) 100%);
+
+    --button-border: transparent;
+    --button-border-hover: transparent;
+
+    --button-color: var(--color-grey-white);
+    --button-color-hover: var(--color-grey-white);
+
+    background: var(--button-bg);
+
+    &:hover,
+    &:active,
+    &:focus {
+        background: var(--button-bg-hover);
+    }
+}
+
 footer.wp-block-group .btn,
 footer.wp-block-group .wp-block-button__link, {
     --button-border-hover: transparent;
