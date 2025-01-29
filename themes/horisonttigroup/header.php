@@ -15,7 +15,7 @@
 
             <div class="site-header__title">
                 <a class="site-header__title-anchor" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img alt="" width="120" height="64" src="<?php echo esc_url( get_theme_file_uri() . '/images/icons/logo-white.svg' ); ?>" />
+                    <img alt="" width="337" height="113" src="<?php echo esc_url( get_theme_file_uri() . '/images/icons/logo-sijoitusasuntovahti.png' ); ?>" />
                     <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
                 </a>
 
