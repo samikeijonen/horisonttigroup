@@ -50,7 +50,7 @@
             z-index: 120;
 
             img {
-                max-width: 4rem;
+                max-width: 7rem;
             }
         }
     }
@@ -58,7 +58,7 @@
     @include media-min(navigation) {
         &-anchor {
             img {
-                max-width: 5rem;
+                max-width: 8rem;
             }
         }
     }

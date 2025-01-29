@@ -1,0 +1,1 @@
+{"version":3,"file":"blocks/hero/index.css","mappings":";;;AACA;EACI;EACA;EACA;AAAJ,C","sources":["webpack://meomblocks/./src/blocks/hero/editor.scss"],"sourcesContent":["// Editor styles.\n.editor-styles-wrapper .hero .components-placeholder {\n    left: 0;\n    position: absolute;\n    top: 0;\n}\n"],"names":[],"sourceRoot":""}

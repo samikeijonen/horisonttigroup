@@ -1,1 +1,38 @@
-.media-content{container-name:media-content;container-type:inline-size}.media-content__container{display:grid;gap:var(--space-m-3xl);grid-template-areas:"media" "content";grid-template-columns:1fr;grid-template-rows:1fr}.media-content__container>*{position:relative}.media-content__container .media-content-item--media{grid-area:media}@container media-content (min-width: 50em){.media-content__container{align-items:center;grid-template-columns:repeat(2,1fr)}.media-content__container.has-media-position-left{grid-template-areas:"media content"}.media-content__container.has-media-position-right{grid-template-areas:"content media"}}
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/media-content/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+/* Import certain style utilities from wanted theme */
+/**
+ * Sass related CSS.
+ */
+.media-content {
+  container-name: media-content;
+  container-type: inline-size;
+}
+.media-content__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "media" "content";
+  gap: var(--space-m-3xl);
+}
+.media-content__container > * {
+  position: relative;
+}
+.media-content__container .media-content-item--media {
+  grid-area: media;
+}
+@container media-content (min-width: 50em) {
+  .media-content__container {
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .media-content__container.has-media-position-left {
+    grid-template-areas: "media content";
+  }
+  .media-content__container.has-media-position-right {
+    grid-template-areas: "content media";
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

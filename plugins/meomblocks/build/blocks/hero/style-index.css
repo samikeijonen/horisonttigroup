@@ -1,1 +1,81 @@
-.hero{--hero-radius-padding:var(--side-padding);--hero-radius-inner-size:var(--space-l);--hero-radius:calc(var(--hero-radius-inner-size) + var(--hero-radius-padding));background-color:var(--color-grey-black);border-bottom-right-radius:var(--hero-radius);color:var(--color-body);container-name:hero;container-type:inline-size;position:relative}.hero__container{display:grid;gap:var(--space-l-xl);grid-template-columns:1fr;min-height:min(35rem,50vh);padding-bottom:var(--side-padding);padding-top:var(--space-l)}@container hero (min-width: 45em){.hero__container{align-items:center;gap:var(--space-m);grid-template-columns:1fr 1fr;padding-top:var(--side-padding)}}.hero__content,.hero__image{position:relative}@container hero (max-width: 45em){.hero.has-image-first-mobile .hero__image{order:1}.hero.has-image-first-mobile .hero__content{order:2}.hero.has-image-first-mobile .hero__container{padding-bottom:var(--space-l)}}.hero__image img{border-bottom-right-radius:var(--hero-radius-inner-size)}@container hero (min-width: 45em){.hero__image img{bottom:0;height:100%;left:0;-o-object-fit:cover;object-fit:cover;position:absolute;right:0;top:0;width:100%;z-index:0}}.content-area>.hero:first-child{margin-top:0}.content-area>.hero:last-child{margin-bottom:0}
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!../../node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/hero/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+/* Import certain style utilities from wanted theme */
+/**
+ * Sass related CSS.
+ */
+.hero {
+  --hero-radius-padding: var(--side-padding);
+  --hero-radius-inner-size: var(--space-l);
+  --hero-radius: calc(var(--hero-radius-inner-size) + var(--hero-radius-padding));
+  container-name: hero;
+  container-type: inline-size;
+  background-color: var(--color-grey-black);
+  border-bottom-right-radius: var(--hero-radius);
+  color: var(--color-body);
+  position: relative;
+}
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-l-xl);
+  min-height: min(35rem, 50vh);
+  padding-bottom: var(--side-padding);
+  padding-top: var(--space-l);
+}
+@container hero (min-width: 45em) {
+  .hero__container {
+    align-items: center;
+    gap: var(--space-m);
+    grid-template-columns: 1fr 1fr;
+    padding-top: var(--side-padding);
+  }
+}
+.hero__content, .hero__image {
+  position: relative;
+}
+@container hero (max-width: 45em) {
+  .hero.has-image-first-mobile .hero__image {
+    order: 1;
+  }
+  .hero.has-image-first-mobile .hero__content {
+    order: 2;
+  }
+  .hero.has-image-first-mobile .hero__container {
+    padding-bottom: var(--space-l);
+  }
+}
+.hero__image img {
+  border-bottom-right-radius: var(--hero-radius-inner-size);
+}
+@container hero (min-width: 45em) {
+  .hero__image img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.content-area > .hero:first-child {
+  margin-top: 0;
+}
+
+.content-area > .hero:last-child {
+  margin-bottom: 0;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
