@@ -14,8 +14,25 @@
         <nav class="mx-auto width-wide site-header__container">
 
             <div class="site-header__title">
+            <?php
+            // Get the current domain
+            $current_domain = $_SERVER['HTTP_HOST'];
+
+            // Set the logo URL based on the part of the domain
+            if ( strpos( $current_domain, 'horisonttigroup' ) !== false ) :
+                $logo_url    = get_theme_file_uri() . '/images/icons/logo-white.svg';
+                $logo_width  = 120;
+                $logo_height = 64;
+                $logo_class  = 'horisonttigroup';
+            else :
+                $logo_url    = get_theme_file_uri() . '/images/icons/logo-sijoitusasuntovahti.png';
+                $logo_width  = 337;
+                $logo_height = 113;
+                $logo_class  = 'sijoitusasuntovahti';
+            endif;
+            ?>
                 <a class="site-header__title-anchor" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <img alt="" width="337" height="113" src="<?php echo esc_url( get_theme_file_uri() . '/images/icons/logo-sijoitusasuntovahti.png' ); ?>" />
+                    <img class="site-header__title-anchor-img site-header__title-anchor-img--<?php echo esc_attr( $logo_class ); ?>" alt="" width="<?php echo esc_attr( $logo_width ); ?>" height="<?php echo esc_attr( $logo_height ); ?>" src="<?php echo esc_url( $logo_url ); ?>" />
                     <span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span>
                 </a>
 

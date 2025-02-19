@@ -49,16 +49,24 @@
             position: relative;
             z-index: 120;
 
-            img {
+            &-img {
                 max-width: 7rem;
+
+                &--horisonttigroup {
+                    max-width: 4rem;
+                }
             }
         }
     }
 
     @include media-min(navigation) {
         &-anchor {
-            img {
+            &-img {
                 max-width: 8rem;
+
+                &--horisonttigroup {
+                    max-width: 5rem;
+                }
             }
         }
     }
