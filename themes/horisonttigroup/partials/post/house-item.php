@@ -9,6 +9,7 @@ $item_id       = ! empty( $args['item_id'] ) ? $args['item_id'] : get_the_ID();
 $taxonomy_slug = ! empty( $args['taxonomy'] ) ? $args['taxonomy'] : 'category';
 
 $card_title     = get_field( 'house_card_title', $item_id );
+$address        = get_field( 'house_address', $item_id );
 $typeh          = get_field( 'house_type', $item_id );
 $price          = get_field( 'house_price', $item_id );
 $price_sell     = get_field( 'house_price_sell', $item_id );
@@ -31,6 +32,11 @@ $income_procent = get_field( 'house_income_procent', $item_id );
                     <?php endif; ?>
                     &middot;
                     <?php
+                    if ( $address ) :
+                        echo '<span class="card-item__house-address">' . esc_html( $address ) . ',</span>';
+                    endif;
+                    ?>
+                    <?php
                         get_template_part(
                             'partials/post/card-item-taxonomy',
                             '',
@@ -41,7 +47,6 @@ $income_procent = get_field( 'house_income_procent', $item_id );
                             ]
                         );
                     ?>
-                    &middot;
                     <?php
                         get_template_part(
                             'partials/post/card-item-taxonomy',
