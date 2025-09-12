@@ -37,6 +37,16 @@
         .card-item__content > :nth-last-child(2) {
             margin-bottom: 0;
         }
+
+        .card-item__taxonomy--house-status {
+            background-color: var(--color-bg-card-footer);
+            border-top-right-radius: var(--radius-large);
+            border-bottom-left-radius: var(--radius-large);
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: var(--space-2xs) var(--space-xs);
+        }
     }
 
     &__link {
