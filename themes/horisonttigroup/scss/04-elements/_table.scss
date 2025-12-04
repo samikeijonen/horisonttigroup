@@ -23,7 +23,9 @@ tbody tr:nth-child(odd) {
 }
 
 td,
-th {
+th,
+.wp-block-table.wp-block-table td,
+.wp-block-table.wp-block-table th {
     border: 0;
     border-width: 0 0 1px;
     min-width: 6em;
