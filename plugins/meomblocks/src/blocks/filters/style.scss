@@ -216,7 +216,7 @@
 }
 
 .filters-items__content {
-    gap: var(--spacing-ml);
+    gap: var(--space-m);
     transition: opacity 0.3s;
 
     &.is-loading {

@@ -121,6 +121,7 @@
         // Cropped Images.
         &.is-cropped figure.wp-block-image:not(#individual-image) {
             align-self: inherit;
+            width: auto !important;
             > div:not(.components-drop-zone),
             > a {
                 display: flex;
