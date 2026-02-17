@@ -15,13 +15,13 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^27"
+		"@wordpress/scripts": "^31"
 	},
 	"dependencies": {
-		"@evermade/wp-block-toolkit": "^5",
-		"@meom/block-components": "^1.2",
-		"@wordpress/core-data": "^6.3",
-		"@wordpress/icons": "^9.4",
+		"@evermade/wp-block-toolkit": "^8",
+		"@meom/block-components": "^1.3",
+		"@wordpress/core-data": "^7",
+		"@wordpress/icons": "^11",
 		"classnames": "^2.5"
 	}
 }
