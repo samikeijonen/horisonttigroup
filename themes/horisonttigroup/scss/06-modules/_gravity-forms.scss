@@ -22,7 +22,8 @@
 }
 
 // Single field after some content
-* + .gfield {
+* + .gfield,
+.gform_page > * + * {
     margin-top: var(--space-m);
 }
 

@@ -14,7 +14,7 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^27",
+		"@wordpress/scripts": "^31",
 		"browser-sync": "^2",
 		"browser-sync-webpack-plugin": "^2.3.0"
 	},
