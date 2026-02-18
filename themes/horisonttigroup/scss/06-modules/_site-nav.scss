@@ -310,7 +310,7 @@
 
 .site-nav__toggle {
     @include media-min(navigation) {
-        display: none;
+        display: none !important;
     }
 
     background-color: inherit;
